@@ -96,8 +96,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EventClasses\NewRepairOrderEventArgs.cs" />
+    <Compile Include="Interfaces\IShellView.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
+    <Compile Include="IoCContainer.cs" />
     <Compile Include="ViewModelFactory.cs" />
     <Compile Include="ViewModels\NewRORepairViewModel.cs" />
     <Compile Include="ViewModels\NewROVehicleViewModel.cs" />
