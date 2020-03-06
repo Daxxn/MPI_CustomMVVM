@@ -1,0 +1,36 @@
+﻿using MPILibrary;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MPI_CustomMVVM_WPF.ViewModels
+{
+    public class SelectedRepairOrderViewModel : ViewModelBase
+	{
+		#region - Fields & Properties
+		private RepairOrder _repairOrder;
+		#endregion
+
+		#region - Constructors
+		public SelectedRepairOrderViewModel( ) { }
+		#endregion
+
+		#region - Methods
+
+		#endregion
+
+		#region - Full Properties
+		public RepairOrder RepairOrder
+		{
+			get { return _repairOrder; }
+			set
+			{
+				_repairOrder = value;
+				OnPropertyChanged(nameof(RepairOrder));
+			}
+		}
+		#endregion
+	}
+}
