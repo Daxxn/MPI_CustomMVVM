@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Windows.Input;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
-    public class ShellViewModel : ViewModelBase
+    public class ShellViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
 

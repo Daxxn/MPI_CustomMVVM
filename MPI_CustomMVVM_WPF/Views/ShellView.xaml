@@ -18,7 +18,7 @@
                 <MenuItem Header="Save" Click="Save_Click"/>
             </MenuItem>
             <MenuItem Header="Create RO" Click="CreateRO_Click"/>
-            <MenuItem Header="Create RO" Command="{Binding Path=TestCommand}"/>
+            <MenuItem Header="Command Test" Command="{Binding Path=TestCommand}" CommandParameter="{Binding Path=RepairOrdersVM}"/>
         </Menu>
 
         <TabControl Grid.Row="2" x:Name="MainTabControl" SelectionChanged="MainTabControl_SelectionChanged">

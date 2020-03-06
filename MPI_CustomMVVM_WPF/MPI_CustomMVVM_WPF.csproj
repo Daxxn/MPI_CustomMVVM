@@ -96,6 +96,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EventClasses\NewRepairOrderEventArgs.cs" />
+    <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="Interfaces\IViewModel.cs" />
+    <Compile Include="ViewModelFactory.cs" />
     <Compile Include="ViewModels\NewRORepairViewModel.cs" />
     <Compile Include="ViewModels\NewROVehicleViewModel.cs" />
     <Compile Include="ViewModels\NewROViewModel.cs" />
@@ -159,6 +162,9 @@
       <Project>{96DA43CE-AB51-4F07-8007-5E1D9193B961}</Project>
       <Name>MPILibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ButtonCommands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

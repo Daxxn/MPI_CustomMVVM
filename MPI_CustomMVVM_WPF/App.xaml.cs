@@ -13,5 +13,12 @@ namespace MPI_CustomMVVM_WPF
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup( StartupEventArgs e )
+        {
+            base.OnStartup(e);
+            var shellView = ViewModelFactory.BuildShellView();
+            //ShellView shell = shellView as ShellView;
+            shellView.Show();
+        }
     }
 }

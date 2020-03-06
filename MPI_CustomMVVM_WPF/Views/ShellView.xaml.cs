@@ -1,4 +1,5 @@
-﻿using MPI_CustomMVVM_WPF.ViewModels;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPI_CustomMVVM_WPF.ViewModels;
 using MPI_CustomMVVM_WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace MPI_CustomMVVM_WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class ShellView : Window
+    public partial class ShellView : Window, IView
     {
         #region Fields & Properties
 
