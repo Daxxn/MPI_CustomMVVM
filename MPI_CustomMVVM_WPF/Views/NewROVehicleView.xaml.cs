@@ -1,4 +1,5 @@
-﻿using MPI_CustomMVVM_WPF.ViewModels;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPI_CustomMVVM_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +20,14 @@ namespace MPI_CustomMVVM_WPF.Views
     /// <summary>
     /// Interaction logic for NewROVehicleView.xaml
     /// </summary>
-    public partial class NewROVehicleView : UserControl
+    public partial class NewROVehicleView : UserControl, IView
     {
         public NewROVehicleViewModel NewVehicleVM { get; private set; }
-        public NewROVehicleView( NewROVehicleViewModel vm )
+        public NewROVehicleView( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            NewVehicleVM = vm;
+            //NewVehicleVM = vm;
         }
 
         private void SearchVIN_Click( object sender, RoutedEventArgs e )

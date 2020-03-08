@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MPI_CustomMVVM_WPF.Interfaces
 {
-    public interface IView
+    public interface IWindowView : IView
     {
-        object DataContext { get; set; }
+        void Show( );
     }
 }

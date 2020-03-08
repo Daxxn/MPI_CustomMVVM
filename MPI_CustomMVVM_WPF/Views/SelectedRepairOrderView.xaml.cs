@@ -1,4 +1,5 @@
-﻿using MPI_CustomMVVM_WPF.ViewModels;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPI_CustomMVVM_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +20,14 @@ namespace MPI_CustomMVVM_WPF.Views
     /// <summary>
     /// Interaction logic for SelectedRepairOrderView.xaml
     /// </summary>
-    public partial class SelectedRepairOrderView : UserControl
+    public partial class SelectedRepairOrderView : UserControl, IView
     {
         public SelectedRepairOrderViewModel SelectedRepairOrderVM { get; private set; }
-        public SelectedRepairOrderView( SelectedRepairOrderViewModel vm )
+        public SelectedRepairOrderView( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            SelectedRepairOrderVM = vm;
+            //SelectedRepairOrderVM = vm;
         }
     }
 }

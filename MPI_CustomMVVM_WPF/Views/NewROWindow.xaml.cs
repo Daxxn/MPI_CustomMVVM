@@ -1,4 +1,5 @@
 ﻿using MPI_CustomMVVM_WPF.EventClasses;
+using MPI_CustomMVVM_WPF.Interfaces;
 using MPI_CustomMVVM_WPF.ViewModels;
 using MPILibrary;
 using System;
@@ -20,7 +21,7 @@ namespace MPI_CustomMVVM_WPF.Views
     /// <summary>
     /// Interaction logic for NewROWindow.xaml
     /// </summary>
-    public partial class NewROWindow : Window
+    public partial class NewROWindow : Window, IWindowView
     {
         public event EventHandler<NewRepairOrderEventArgs> CreatingRepairOrder;
         #region Views
@@ -31,13 +32,14 @@ namespace MPI_CustomMVVM_WPF.Views
         #region ViewModels
         public NewROViewModel NewROVM { get; private set; } = new NewROViewModel();
         #endregion
-        public NewROWindow( )
+        public NewROWindow( IViewModel vm )
         {
             InitializeComponent();
-            DataContext = NewROVM;
-            NewVehicleV = new NewROVehicleView(NewROVM.NewVehicleVM);
-            NewOwnerV = new NewROOwnerView(NewROVM.NewOwnerVM);
-            NewRepairV = new NewRORepairView(NewROVM.NewRepairVM);
+            DataContext = vm;
+            //DataContext = NewROVM;
+            //NewVehicleV = new NewROVehicleView(NewROVM.NewVehicleVM);
+            //NewOwnerV = new NewROOwnerView(NewROVM.NewOwnerVM);
+            //NewRepairV = new NewRORepairView(NewROVM.NewRepairVM);
         }
 
         private void FinishRO_Click( object sender, RoutedEventArgs e )

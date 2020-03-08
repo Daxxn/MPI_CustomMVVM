@@ -1,4 +1,5 @@
-﻿using MPI_CustomMVVM_WPF.ViewModels;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPI_CustomMVVM_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +20,14 @@ namespace MPI_CustomMVVM_WPF.Views
     /// <summary>
     /// Interaction logic for NewRORepairView.xaml
     /// </summary>
-    public partial class NewRORepairView : UserControl
+    public partial class NewRORepairView : UserControl, IView
     {
         public NewRORepairViewModel NewRORepairVM { get; private set; }
-        public NewRORepairView( NewRORepairViewModel vm)
+        public NewRORepairView( IViewModel vm)
         {
             InitializeComponent();
             DataContext = vm;
-            NewRORepairVM = vm;
+            //NewRORepairVM = vm;
         }
 
         private void AddRepair_Click( object sender, RoutedEventArgs e )

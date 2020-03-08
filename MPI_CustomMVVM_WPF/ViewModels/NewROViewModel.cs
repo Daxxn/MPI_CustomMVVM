@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
-    public class NewROViewModel : ViewModelBase
+    public class NewROViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
 		#region Nested ViewModels

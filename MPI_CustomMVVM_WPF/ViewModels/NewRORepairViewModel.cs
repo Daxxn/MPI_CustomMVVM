@@ -1,4 +1,5 @@
-﻿using MPILibrary;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPILibrary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
-    public class NewRORepairViewModel : ViewModelBase
+    public class NewRORepairViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
 		private ObservableCollection<Repair> _newRepairDataList = new ObservableCollection<Repair>();

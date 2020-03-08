@@ -99,6 +99,7 @@
     <Compile Include="Interfaces\IShellView.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
+    <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="IoCContainer.cs" />
     <Compile Include="ViewModelFactory.cs" />
     <Compile Include="ViewModels\NewRORepairViewModel.cs" />
@@ -108,7 +109,6 @@
     <Compile Include="ViewModels\RepairOrdersViewModel.cs" />
     <Compile Include="ViewModels\SelectedRepairOrderViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="ViewModels\TestUpdater.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\NewROOwnerView.xaml.cs">
       <DependentUpon>NewROOwnerView.xaml</DependentUpon>

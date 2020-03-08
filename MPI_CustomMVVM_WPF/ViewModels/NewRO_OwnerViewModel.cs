@@ -1,4 +1,5 @@
-﻿using MPILibrary;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPILibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
-    public class NewRO_OwnerViewModel : ViewModelBase
+    public class NewRO_OwnerViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
 		public Owner NewOwner { get; private set; }

@@ -21,7 +21,7 @@ namespace MPI_CustomMVVM_WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class ShellView : Window, IView
+    public partial class ShellView : Window, IWindowView
     {
         #region Fields & Properties
 
@@ -30,8 +30,8 @@ namespace MPI_CustomMVVM_WPF
         #endregion
 
         #region Views
-        public RepairOrdersView RepairOrdersV { get; private set; }
-        public SelectedRepairOrderView SelectedRepairOrderV { get; private set; }
+        //public RepairOrdersView RepairOrdersV { get; private set; }
+        //public SelectedRepairOrderView SelectedRepairOrderV { get; private set; }
         #endregion
 
         #region ViewModels
@@ -39,12 +39,12 @@ namespace MPI_CustomMVVM_WPF
         #endregion
         #endregion
 
-        public ShellView( )
+        public ShellView( IViewModel vm )
         {
             InitializeComponent();
-            DataContext = ShellVM;
-            RepairOrdersV = new RepairOrdersView(ShellVM.RepairOrdersVM);
-            SelectedRepairOrderV = new SelectedRepairOrderView(ShellVM.SelectedRepairOrderVM);
+            DataContext = vm;
+            //RepairOrdersV = new RepairOrdersView(ShellVM.RepairOrdersVM);
+            //SelectedRepairOrderV = new SelectedRepairOrderView(ShellVM.SelectedRepairOrderVM);
         }
 
         #region Action Event handlers
@@ -55,8 +55,10 @@ namespace MPI_CustomMVVM_WPF
 
         private void CreateRO_Click( object sender, RoutedEventArgs e )
         {
-            NewROWindow = new NewROWindow();
-            NewROWindow.Show();
+            //NewROWindow = new NewROWindow();
+            //NewROWindow.Show();
+            var newRO = ViewModelFactory.BuildWindow<NewROWindow, NewROViewModel>();
+            newRO.Show();
         }
         #endregion
 
@@ -69,12 +71,13 @@ namespace MPI_CustomMVVM_WPF
         {
             if (MainTabControl.SelectedIndex == 0)
             {
-                RepairOrder_Content_View.Content = RepairOrdersV;
+                //RepairOrder_Content_View.Content = RepairOrdersV;
+                RepairOrder_Content_View.Content = ViewModelFactory.BuildRepairOrdersViewTesting();
             }
             else if (MainTabControl.SelectedIndex == 1)
             {
-                SelectedRepairOrder_Content_View.Content = SelectedRepairOrderV;
-                ShellVM.SelectedRepairOrderVM.RepairOrder = ShellVM.RepairOrdersVM.SelectedRepairOrder;
+                SelectedRepairOrder_Content_View.Content = ViewModelFactory.BuildView<SelectedRepairOrderView, SelectedRepairOrderViewModel>();
+                //ShellVM.SelectedRepairOrderVM.RepairOrder = ShellVM.RepairOrdersVM.SelectedRepairOrder;
             }
         }
     }

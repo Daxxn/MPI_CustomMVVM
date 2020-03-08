@@ -1,4 +1,5 @@
-﻿using MPI_CustomMVVM_WPF.ViewModels;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPI_CustomMVVM_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +20,14 @@ namespace MPI_CustomMVVM_WPF.Views
     /// <summary>
     /// Interaction logic for NewROOwnerView.xaml
     /// </summary>
-    public partial class NewROOwnerView : UserControl
+    public partial class NewROOwnerView : UserControl, IView
     {
         public NewRO_OwnerViewModel NewOwnerVM { get; set; }
-        public NewROOwnerView( NewRO_OwnerViewModel vm )
+        public NewROOwnerView( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            NewOwnerVM = vm;
+            //NewOwnerVM = vm;
         }
     }
 }
