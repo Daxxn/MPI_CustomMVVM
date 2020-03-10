@@ -51,7 +51,6 @@
       <HashCode>AAAAAAAAABAAAAAAgAAAAAAAAAAiAAAAAAAIAABAAAA=</HashCode>
       <FileName>ViewModels\NewROViewModel.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="MPI_CustomMVVM_WPF.ViewModels.NewROVehicleViewModel">
     <Position X="9" Y="3.75" Width="1.5" />
@@ -64,7 +63,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AIIAAAAACBgAAAAAAAgAAAgEAQAAAAAAIAICACAIAAA=</HashCode>
+      <HashCode>AIIAAAAACBgAAAAAAAgAAAgEAQAAAAAAIAICAAAIAAA=</HashCode>
       <FileName>ViewModels\NewROVehicleViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

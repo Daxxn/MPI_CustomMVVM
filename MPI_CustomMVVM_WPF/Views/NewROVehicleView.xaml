@@ -24,8 +24,7 @@
             VIN :
         </TextBlock>
         <TextBox Grid.Row="0" Grid.Column="1"
-                Style="{StaticResource NewRO_DataEntry}"
-				 Text="{Binding Path=VINInput, UpdateSourceTrigger=PropertyChanged}"/>
+                Style="{StaticResource NewRO_DataEntry}" Text="{Binding Path=VINInput, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Button x:Name="SearchVIN" Grid.Row="1" Grid.ColumnSpan="2">
             Search for VIN
@@ -34,29 +33,25 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Make :
         </TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="1"
-				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=MakeInput, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
+                 Text="{Binding Path=MakeInput}"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Year :
         </TextBlock>
-        <TextBox Grid.Row="3" Grid.Column="1"
-				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=YearInput, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
+                 Text="{Binding Path=YearInput}"/>
 
         <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Model :
         </TextBlock>
-        <TextBox Grid.Row="4" Grid.Column="1"
-				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=ModelInput, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
+                 Text="{Binding Path=ModelInput}"/>
 
         <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Color :
         </TextBlock>
-        <TextBox Grid.Row="5" Grid.Column="1"
-				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=ColorInput, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
+                 Text="{Binding Path=ColorInput}"/>
     </Grid>
 </UserControl>

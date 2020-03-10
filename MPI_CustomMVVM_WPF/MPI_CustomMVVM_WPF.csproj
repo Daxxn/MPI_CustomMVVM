@@ -96,6 +96,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ButtonCommands\CreateNewROCommand.cs" />
+    <Compile Include="Interfaces\IShellView.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />

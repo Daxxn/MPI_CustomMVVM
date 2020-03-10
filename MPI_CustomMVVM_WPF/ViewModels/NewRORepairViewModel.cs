@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
@@ -17,7 +16,6 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		private ObservableCollection<Repair> _newRepairDataList = new ObservableCollection<Repair>();
 		private ObservableCollection<Repair> _repairOPCodes = new ObservableCollection<Repair>();
 		private Repair _selectedOpCode;
-		private Repair _selectedRepair;
 		#endregion
 
 		#region - Constructors
@@ -48,65 +46,23 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			return NewRepairDataList.ToList();
 		}
 
-		private void AddRepairToList(  )
-		{
-			AddRepairToList(SelectedOPCode);
-		}
-
-		private void AddRepairToList( Repair repair )
-		{
-			if (repair != null && !NewRepairDataList.Contains(repair))
-			{
-				NewRepairDataList.Add(repair);
-				//SelectedOPCode = null;
-			}
-		}
-
-		private void SaveRepairToList( )
-		{
-			SaveRepairToList(SelectedRepair);
-		}
-
-		private void SaveRepairToList( Repair repair )
-		{
-			if (repair != null && !RepairOPCodes.Contains(repair))
-			{
-				RepairOPCodes.Add(repair);
-				SelectedRepair = null;
-			}
-		}
-
 		#region Event Handlers
 		public void NewRepair( object sender, RoutedEventArgs e )
 		{
-			AddRepairToList(new Repair());
+
 		}
 
 		public void AddRepair( object sender, RoutedEventArgs e )
 		{
-			AddRepairToList();
+			if (SelectedOPCode != null && !NewRepairDataList.Contains(SelectedOPCode))
+			{
+				NewRepairDataList.Add(SelectedOPCode);
+			}
 		}
 
 		public void RemoveRepair( object sender, RoutedEventArgs e )
 		{
-			NewRepairDataList.Remove(SelectedRepair);
-			SelectedRepair = NewRepairDataList.Count > 0 ? NewRepairDataList[ 0 ] : null;
-			SelectedOPCode = null;
-		}
 
-		public void BoxSelctionChanged( object sender, SelectionChangedEventArgs e )
-		{
-			if (SelectedOPCode is null)
-			{
-				return;
-			}
-			AddRepairToList();
-			SelectedRepair = SelectedOPCode;
-		}
-
-		public void SaveSelectedRepairClick( object sender, RoutedEventArgs e )
-		{
-			SaveRepairToList();
 		}
 		#endregion
 		#endregion
@@ -139,15 +95,6 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			{
 				_selectedOpCode = value;
 				OnPropertyChanged(nameof(SelectedOPCode));
-			}
-		}
-		public Repair SelectedRepair
-		{
-			get { return _selectedRepair; }
-			set
-			{
-				_selectedRepair = value;
-				OnPropertyChanged(nameof(SelectedRepair));
 			}
 		}
 		#endregion

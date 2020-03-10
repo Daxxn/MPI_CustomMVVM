@@ -18,8 +18,4 @@
     <Style TargetType="TextBlock" x:Key="NewRepairSelectionComboBox" BasedOn="{StaticResource NewRO_DataID}">
         <Setter Property="Padding" Value="2,0,4,0"/>
     </Style>
-	<Style TargetType="Border" x:Key="NewRepair_OPCode_ID_Border">
-		<Setter Property="BorderBrush" Value="{StaticResource OPCode_IDNumber_Border}"/>
-		<Setter Property="BorderThickness" Value="2"/>
-	</Style>
 </ResourceDictionary>

@@ -26,7 +26,6 @@ namespace MPI_CustomMVVM_WPF.Views
         {
             InitializeComponent();
             DataContext = vm;
-            SetEventBindings(vm);
         }
 
         public void SetEventBindings( IViewModel vm )
@@ -34,8 +33,16 @@ namespace MPI_CustomMVVM_WPF.Views
             var vmTrue = vm as NewRORepairViewModel;
             AddRepair.Click += vmTrue.AddRepair;
             DelRepair.Click += vmTrue.RemoveRepair;
-            DefaultOPCBox.SelectionChanged += vmTrue.BoxSelctionChanged;
-            SaveRepair.Click += vmTrue.SaveSelectedRepairClick;
+        }
+
+        private void AddRepair_Click( object sender, RoutedEventArgs e )
+        {
+            //NewRORepairVM.AddRepair();
+        }
+
+        private void DelRepair_Click( object sender, RoutedEventArgs e )
+        {
+            //NewRORepairVM.RemoveRepair();
         }
     }
 }
