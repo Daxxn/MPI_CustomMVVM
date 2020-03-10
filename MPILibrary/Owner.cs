@@ -12,6 +12,7 @@ namespace MPILibrary
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public PhoneNumber Phone { get; set; }
+		public string _phoneNumberString;
 		public Address Address { get; set; }
 		#endregion
 
@@ -37,6 +38,16 @@ namespace MPILibrary
 			get
 			{
 				return $"{FirstName} {LastName}";
+			}
+		}
+
+		public string PhoneNumberString
+		{
+			get { return _phoneNumberString; }
+			set
+			{
+				_phoneNumberString = value;
+				LastName = value;
 			}
 		}
 		#endregion

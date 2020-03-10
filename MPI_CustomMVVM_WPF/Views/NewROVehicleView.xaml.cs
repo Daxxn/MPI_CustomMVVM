@@ -22,17 +22,17 @@ namespace MPI_CustomMVVM_WPF.Views
     /// </summary>
     public partial class NewROVehicleView : UserControl, IView
     {
-        public NewROVehicleViewModel NewVehicleVM { get; private set; }
         public NewROVehicleView( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            //NewVehicleVM = vm;
+            SetEventBindings(vm);
         }
 
-        private void SearchVIN_Click( object sender, RoutedEventArgs e )
+        public void SetEventBindings( IViewModel vm )
         {
-            MessageBox.Show("VIN Decoder API not integrated yet.");
+            var viewModel = vm as NewROVehicleViewModel;
+            SearchVIN.Click += viewModel.SearchVINClick;
         }
     }
 }

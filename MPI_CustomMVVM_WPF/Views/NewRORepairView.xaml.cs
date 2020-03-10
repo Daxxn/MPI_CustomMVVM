@@ -22,22 +22,27 @@ namespace MPI_CustomMVVM_WPF.Views
     /// </summary>
     public partial class NewRORepairView : UserControl, IView
     {
-        public NewRORepairViewModel NewRORepairVM { get; private set; }
         public NewRORepairView( IViewModel vm)
         {
             InitializeComponent();
             DataContext = vm;
-            //NewRORepairVM = vm;
+        }
+
+        public void SetEventBindings( IViewModel vm )
+        {
+            var vmTrue = vm as NewRORepairViewModel;
+            AddRepair.Click += vmTrue.AddRepair;
+            DelRepair.Click += vmTrue.RemoveRepair;
         }
 
         private void AddRepair_Click( object sender, RoutedEventArgs e )
         {
-            NewRORepairVM.AddRepair();
+            //NewRORepairVM.AddRepair();
         }
 
         private void DelRepair_Click( object sender, RoutedEventArgs e )
         {
-            NewRORepairVM.RemoveRepair();
+            //NewRORepairVM.RemoveRepair();
         }
     }
 }

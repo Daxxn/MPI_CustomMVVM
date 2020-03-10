@@ -22,12 +22,18 @@ namespace MPI_CustomMVVM_WPF.Views
     /// </summary>
     public partial class NewROOwnerView : UserControl, IView
     {
-        public NewRO_OwnerViewModel NewOwnerVM { get; set; }
+        #region Construction
         public NewROOwnerView( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            //NewOwnerVM = vm;
+            SetEventBindings(vm);
         }
+
+        public void SetEventBindings( IViewModel vm )
+        {
+            
+        }
+        #endregion
     }
 }

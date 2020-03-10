@@ -18,67 +18,58 @@ using System.Windows.Shapes;
 
 namespace MPI_CustomMVVM_WPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class ShellView : Window, IWindowView
-    {
-        #region Fields & Properties
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class ShellView : Window, IWindowView
+	{
+		#region Fields & Properties
+		private int CurrentTabIndex = -1;
+		#endregion
 
-        #region Windows
-        public NewROWindow NewROWindow { get; private set; }
-        #endregion
+		public ShellView( IViewModel vm )
+		{
+			InitializeComponent();
+			DataContext = vm;
+			SetEventBindings(vm);
+		}
 
-        #region Views
-        //public RepairOrdersView RepairOrdersV { get; private set; }
-        //public SelectedRepairOrderView SelectedRepairOrderV { get; private set; }
-        #endregion
+		public void SetEventBindings( IViewModel vm )
+		{
+			var viewModel = vm as ShellViewModel;
+			SaveButton.Click += viewModel.SaveClick;
+		}
 
-        #region ViewModels
-        public ShellViewModel ShellVM { get; private set; } = new ShellViewModel();
-        #endregion
-        #endregion
+		#region Action Event handlers
+		//  These need to stay here because they activate a view.
+		private void CreateRO_Click( object sender, RoutedEventArgs e )
+		{
+			var vm = DataContext as ShellViewModel;
+			vm.NewROVM = new NewROViewModel();
+			var newRO = ViewModelFactory.BuildNewROWindow(vm.NewROVM);
+			newRO.Show();
+		}
 
-        public ShellView( IViewModel vm )
-        {
-            InitializeComponent();
-            DataContext = vm;
-            //RepairOrdersV = new RepairOrdersView(ShellVM.RepairOrdersVM);
-            //SelectedRepairOrderV = new SelectedRepairOrderView(ShellVM.SelectedRepairOrderVM);
-        }
-
-        #region Action Event handlers
-        private void Save_Click( object sender, RoutedEventArgs e )
-        {
-
-        }
-
-        private void CreateRO_Click( object sender, RoutedEventArgs e )
-        {
-            //NewROWindow = new NewROWindow();
-            //NewROWindow.Show();
-            var newRO = ViewModelFactory.BuildWindow<NewROWindow, NewROViewModel>();
-            newRO.Show();
-        }
-        #endregion
-
-        /// <summary>
-        /// The shell view tab controller.
-        /// </summary>
-        /// <param name="sender">The object firing this event</param>
-        /// <param name="e">Not needed.</param>
-        private void MainTabControl_SelectionChanged( object sender, SelectionChangedEventArgs e )
-        {
-            if (MainTabControl.SelectedIndex == 0)
-            {
-                //RepairOrder_Content_View.Content = RepairOrdersV;
-                RepairOrder_Content_View.Content = ViewModelFactory.BuildRepairOrdersViewTesting();
-            }
-            else if (MainTabControl.SelectedIndex == 1)
-            {
-                SelectedRepairOrder_Content_View.Content = ViewModelFactory.BuildView<SelectedRepairOrderView, SelectedRepairOrderViewModel>();
-                //ShellVM.SelectedRepairOrderVM.RepairOrder = ShellVM.RepairOrdersVM.SelectedRepairOrder;
-            }
-        }
-    }
+		/// <summary>
+		/// The shell view tab controller.
+		/// </summary>
+		/// <param name="sender">The object firing this event</param>
+		/// <param name="e">Not used for what Im doing.</param>
+		private void MainTabControl_SelectionChanged( object sender, SelectionChangedEventArgs e )
+		{
+			if (MainTabControl.SelectedIndex != CurrentTabIndex)
+			{
+				if (MainTabControl.SelectedIndex == 0)
+				{
+					RepairOrder_Content_View.Content = ViewModelFactory.BuildRepairOrdersView(ShellViewModel.ShellInstance.RepairOrdersVM);
+				}
+				else if (MainTabControl.SelectedIndex == 1)
+				{
+					SelectedRepairOrder_Content_View.Content = ViewModelFactory.BuildSelectedRepairOrderView(ShellViewModel.ShellInstance.SelectedRepairOrderVM);
+				}
+			}
+			CurrentTabIndex = MainTabControl.SelectedIndex;
+		}
+		#endregion
+	}
 }

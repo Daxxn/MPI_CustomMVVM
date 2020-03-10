@@ -95,7 +95,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EventClasses\NewRepairOrderEventArgs.cs" />
+    <Compile Include="ButtonCommands\CreateNewROCommand.cs" />
     <Compile Include="Interfaces\IShellView.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
@@ -105,7 +105,7 @@
     <Compile Include="ViewModels\NewRORepairViewModel.cs" />
     <Compile Include="ViewModels\NewROVehicleViewModel.cs" />
     <Compile Include="ViewModels\NewROViewModel.cs" />
-    <Compile Include="ViewModels\NewRO_OwnerViewModel.cs" />
+    <Compile Include="ViewModels\NewROOwnerViewModel.cs" />
     <Compile Include="ViewModels\RepairOrdersViewModel.cs" />
     <Compile Include="ViewModels\SelectedRepairOrderViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -151,6 +151,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="MVVMClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,7 +167,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ButtonCommands\" />
+    <Folder Include="EventClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

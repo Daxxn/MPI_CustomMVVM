@@ -24,10 +24,9 @@
             VIN :
         </TextBlock>
         <TextBox Grid.Row="0" Grid.Column="1"
-                Style="{StaticResource NewRO_DataEntry}" Text="{Binding Path=VINInput}"/>
+                Style="{StaticResource NewRO_DataEntry}" Text="{Binding Path=VINInput, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Button x:Name="SearchVIN" Grid.Row="1" Grid.ColumnSpan="2"
-                Click="SearchVIN_Click">
+        <Button x:Name="SearchVIN" Grid.Row="1" Grid.ColumnSpan="2">
             Search for VIN
         </Button>
 

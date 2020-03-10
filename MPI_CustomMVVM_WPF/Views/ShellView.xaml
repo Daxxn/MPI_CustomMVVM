@@ -15,13 +15,12 @@
 
 		<Menu Grid.Row="0" IsMainMenu="True">
 			<MenuItem Header="File">
-				<MenuItem Header="Save" Click="Save_Click"/>
+				<MenuItem Header="Save" Name="SaveButton"/>
 			</MenuItem>
 			<MenuItem x:Name="CreateROButton" Header="Create RO"
 					Click="CreateRO_Click"/>
-			<MenuItem Header="Command Test"
-					Command="{Binding Path=TestCommand}"
-							CommandParameter="{Binding Path=RepairOrdersVM}"/>
+			<MenuItem Header="CreateRO Command Test"
+					Command="{Binding Path=CreateNewROCommand}"/>
 		</Menu>
 
 		<TabControl Grid.Row="2" x:Name="MainTabControl"

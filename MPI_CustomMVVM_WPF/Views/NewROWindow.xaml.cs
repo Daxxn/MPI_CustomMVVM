@@ -1,5 +1,4 @@
-﻿using MPI_CustomMVVM_WPF.EventClasses;
-using MPI_CustomMVVM_WPF.Interfaces;
+﻿using MPI_CustomMVVM_WPF.Interfaces;
 using MPI_CustomMVVM_WPF.ViewModels;
 using MPILibrary;
 using System;
@@ -23,51 +22,42 @@ namespace MPI_CustomMVVM_WPF.Views
     /// </summary>
     public partial class NewROWindow : Window, IWindowView
     {
-        public event EventHandler<NewRepairOrderEventArgs> CreatingRepairOrder;
-        #region Views
-        public NewROVehicleView NewVehicleV { get; private set; }
-        public NewROOwnerView NewOwnerV { get; private set; }
-        public NewRORepairView NewRepairV { get; private set; }
-        #endregion
-        #region ViewModels
-        public NewROViewModel NewROVM { get; private set; } = new NewROViewModel();
+        #region Fields / Properties
+        private int currentTabIndex = -1;
         #endregion
         public NewROWindow( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            //DataContext = NewROVM;
-            //NewVehicleV = new NewROVehicleView(NewROVM.NewVehicleVM);
-            //NewOwnerV = new NewROOwnerView(NewROVM.NewOwnerVM);
-            //NewRepairV = new NewRORepairView(NewROVM.NewRepairVM);
+
+            SetEventBindings(vm);
         }
 
-        private void FinishRO_Click( object sender, RoutedEventArgs e )
+        public void SetEventBindings( IViewModel vm )
         {
-            // Migrating to NewROVM
-            CreatingRepairOrder.Invoke(this, new NewRepairOrderEventArgs(new RepairOrder()
-            {
-                Vehicle = NewROVM.NewVehicleVM.BuildNewVehicle(),
-                VehicleOwner = NewROVM.NewOwnerVM.BuildNewOwner(),
-                Repairs = NewROVM.NewRepairVM.BuildNewRepair()
-            }
-            ));
+            var vmTest = vm as NewROViewModel;
+            FinishRO.Click += vmTest.FinishROClick;
         }
 
         private void TabControl_SelectionChanged( object sender, SelectionChangedEventArgs e )
         {
-            if (NewROTabControl.SelectedIndex == 0)
+            if (NewROTabControl.SelectedIndex != currentTabIndex)
             {
-                NewRO_Vehicle_Content_View.Content = NewVehicleV;
+                var vm = DataContext as NewROViewModel;
+                if (NewROTabControl.SelectedIndex == 0)
+                {
+                    NewRO_Vehicle_Content_View.Content = ViewModelFactory.BuildNewROVehicleView(vm.NewVehicleVM);
+                }
+                else if (NewROTabControl.SelectedIndex == 1)
+                {
+                    NewRo_Owner_Content_View.Content = ViewModelFactory.BuildNewROOwnerView(vm.NewOwnerVM);
+                }
+                else if (NewROTabControl.SelectedIndex == 2)
+                {
+                    NewRo_Repair_Content_View.Content = ViewModelFactory.BuildNewRORepairView(vm.NewRepairVM);
+                }
             }
-            else if (NewROTabControl.SelectedIndex == 1)
-            {
-                NewRo_Owner_Content_View.Content = NewOwnerV;
-            }
-            else if (NewROTabControl.SelectedIndex == 2)
-            {
-                NewRo_Repair_Content_View.Content = NewRepairV;
-            }
+            currentTabIndex = NewROTabControl.SelectedIndex;
         }
     }
 }

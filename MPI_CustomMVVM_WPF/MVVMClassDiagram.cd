@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.ShellViewModel">
+    <Position X="1.75" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="ShellViewModel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACACAAAAAAAAAAAAAAABAAAAAAQBAAAgAAAAAA=</HashCode>
+      <FileName>ViewModels\ShellViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.SelectedRepairOrderViewModel">
+    <Position X="3" Y="4.25" Width="2.25" />
+    <Members>
+      <Method Name="SelectedRepairOrderViewModel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SelectedRepairOrderViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.RepairOrdersViewModel">
+    <Position X="1" Y="4.25" Width="1.75" />
+    <Members>
+      <Method Name="RepairOrdersViewModel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAIAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <FileName>ViewModels\RepairOrdersViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.NewROViewModel">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="NewROViewModel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAgAAAAAAAAAAiAAAAAAAIAABAAAA=</HashCode>
+      <FileName>ViewModels\NewROViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.NewROVehicleViewModel">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="CleanNumberInput" Hidden="true" />
+      <Method Name="FinalizeRO" Hidden="true" />
+      <Method Name="NewROVehicleViewModel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIIAAAAACBgAAAAAAAgAAAgEAQAAAAAAIAICAAAIAAA=</HashCode>
+      <FileName>ViewModels\NewROVehicleViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.NewRORepairViewModel">
+    <Position X="10.75" Y="3.75" Width="1.75" />
+    <Members>
+      <Method Name="AddRepair" Hidden="true" />
+      <Method Name="FinalizeRO" Hidden="true" />
+      <Method Name="NewRORepairViewModel" Hidden="true" />
+      <Method Name="RemoveRepair" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACAAIACAAAAEAAAAAAIAAAAAQEAAEAAAAAAAQAAAAA=</HashCode>
+      <FileName>ViewModels\NewRORepairViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModels.NewROOwnerViewModel">
+    <Position X="7" Y="3.75" Width="1.75" />
+    <Members>
+      <Method Name="CleanPhoneNumber" Hidden="true" />
+      <Method Name="FinalizeRO" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Method Name="NewROOwnerViewModel" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABggAAAAAAgAEQAAAACAAACAAQQAAgCAQgAShAAAEAA=</HashCode>
+      <FileName>ViewModels\NewROOwnerViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPI_CustomMVVM_WPF.ViewModelFactory">
+    <Position X="5.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAAAAAAAAAAAEAAAAAAAgZBAQAAAAAABAA=</HashCode>
+      <FileName>ViewModelFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

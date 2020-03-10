@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
@@ -40,23 +41,30 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Methods
-		public List<Repair> BuildNewRepair(  )
+		public List<Repair> FinalizeRO(  )
 		{
 			return NewRepairDataList.ToList();
 		}
 
-		public void AddRepair(  )
+		#region Event Handlers
+		public void NewRepair( object sender, RoutedEventArgs e )
 		{
-			if (SelectedOPCode != null && ! NewRepairDataList.Contains(SelectedOPCode))
+
+		}
+
+		public void AddRepair( object sender, RoutedEventArgs e )
+		{
+			if (SelectedOPCode != null && !NewRepairDataList.Contains(SelectedOPCode))
 			{
 				NewRepairDataList.Add(SelectedOPCode);
 			}
 		}
 
-		public void RemoveRepair(  )
+		public void RemoveRepair( object sender, RoutedEventArgs e )
 		{
 
 		}
+		#endregion
 		#endregion
 
 		#region - Full Properties

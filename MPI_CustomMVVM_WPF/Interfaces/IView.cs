@@ -9,5 +9,7 @@ namespace MPI_CustomMVVM_WPF.Interfaces
     public interface IView
     {
         object DataContext { get; set; }
+
+        void SetEventBindings( IViewModel vm );
     }
 }

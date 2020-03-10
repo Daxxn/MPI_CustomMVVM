@@ -28,13 +28,13 @@
             First Name :
         </TextBlock>
         <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=FirstnameInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=FirstNameInput, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Last Name :
         </TextBlock>
         <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=LastnameInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=LastNameInput, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Phone Number :

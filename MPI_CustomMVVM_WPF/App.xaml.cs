@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MPI_CustomMVVM_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -8,17 +9,16 @@ using System.Windows;
 
 namespace MPI_CustomMVVM_WPF
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
-    {
-        protected override void OnStartup( StartupEventArgs e )
-        {
-            base.OnStartup(e);
-            var shellView = ViewModelFactory.BuildShellView();
-            //ShellView shell = shellView as ShellView;
-            shellView.Show();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for App.xaml
+	/// </summary>
+	public partial class App : Application
+	{
+		protected override void OnStartup( StartupEventArgs e )
+		{
+			base.OnStartup(e);
+			var shellView = ViewModelFactory.BuildShellWindow(ShellViewModel.ShellInstance);
+			shellView.Show();
+		}
+	}
 }

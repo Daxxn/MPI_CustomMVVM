@@ -17,11 +17,17 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Constructors
-		public RepairOrdersViewModel( ) { }
+		public RepairOrdersViewModel( )
+		{
+			RepairOrderDataList = new ObservableCollection<RepairOrder>();
+		}
 		#endregion
 
 		#region - Methods
 
+		#region Event Handlers
+
+		#endregion
 		#endregion
 
 		#region - Full Properties

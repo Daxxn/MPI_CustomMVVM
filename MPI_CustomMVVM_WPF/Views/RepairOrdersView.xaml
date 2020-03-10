@@ -15,10 +15,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="1"
+        <DataGrid Grid.Row="1" 
                   ItemsSource="{Binding Path=RepairOrderDataList}"
                   SelectedItem="{Binding Path=SelectedRepairOrder}"
-                  CanUserAddRows="true" CanUserDeleteRows="true"
+                  CanUserAddRows="False" CanUserDeleteRows="False"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="RO Number" Binding="{Binding Path=RONumber}"/>

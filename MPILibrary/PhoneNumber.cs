@@ -8,6 +8,7 @@ namespace MPILibrary
 {
     public struct PhoneNumber
     {
+        public string PhoneNumberString { get; set; }
         public int CountryCode { get; set; }
         public int AreaCode { get; set; }
         public int Exchange { get; set; }
@@ -19,6 +20,7 @@ namespace MPILibrary
             AreaCode = areaCode;
             Exchange = exchange;
             LocalNumber = local;
+            PhoneNumberString = $"{country} - ({areaCode}) - {exchange} - {local}";
         }
 
         public PhoneNumber( int areaCode, int exchange, int local )
@@ -27,6 +29,7 @@ namespace MPILibrary
             AreaCode = areaCode;
             Exchange = exchange;
             LocalNumber = local;
+            PhoneNumberString = $"({areaCode}) {exchange} - {local}";
         }
     }
 }

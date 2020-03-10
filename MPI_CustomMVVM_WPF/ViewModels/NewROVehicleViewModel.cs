@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
@@ -13,11 +14,11 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region - Fields & Properties
 		public Vehicle NewVehicle { get; private set; }
 
-		private string _VINInput;
-		private string _MakeInput;
-		private string _Yearinput;
-		private string _ModelInput;
-		private string _ColorInput;
+		private string _VINInput = "";
+		private string _MakeInput = "";
+		private string _Yearinput = "";
+		private string _ModelInput = "";
+		private string _ColorInput = "";
 		#endregion
 
 		#region - Constructors
@@ -25,7 +26,14 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Methods
-		public Vehicle BuildNewVehicle(  )
+		#region Event Handlers
+		public void SearchVINClick( object sender, RoutedEventArgs e )
+		{
+			MessageBox.Show("VIN Decoder API not integrated yet.");
+		}
+		#endregion
+
+		public Vehicle FinalizeRO(  )
 		{
 			NewVehicle.VIN = VINInput;
 			NewVehicle.Make = MakeInput;
@@ -50,6 +58,19 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 
 			return output;
 		}
+
+		public string CleanVIN( string input )
+		{
+			string output = "";
+			foreach (var c in input)
+			{
+				if (Char.IsDigit(c) || Char.IsLetter(c))
+				{
+					output += c;
+				}
+			}
+			return output;
+		}
 		#endregion
 
 		#region - Full Properties
@@ -62,8 +83,8 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 				{
 					if (VINInput.Length <= 17)
 					{
-						_VINInput = value;
-					} 
+						_VINInput = CleanVIN(value);
+					}
 				}
 				OnPropertyChanged(nameof(VINInput));
 			}

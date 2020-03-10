@@ -22,12 +22,20 @@ namespace MPI_CustomMVVM_WPF.Views
     /// </summary>
     public partial class SelectedRepairOrderView : UserControl, IView
     {
-        public SelectedRepairOrderViewModel SelectedRepairOrderVM { get; private set; }
         public SelectedRepairOrderView( IViewModel vm )
         {
             InitializeComponent();
             DataContext = vm;
-            //SelectedRepairOrderVM = vm;
+            SetEventBindings(vm);
         }
+
+        public void SetEventBindings( IViewModel vm )
+        {
+            var viewModel = vm as SelectedRepairOrderViewModel;
+        }
+
+        #region Event Handlers
+
+        #endregion
     }
 }

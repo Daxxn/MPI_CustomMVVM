@@ -7,11 +7,17 @@
         mc:Ignorable="d"
         Title="NewROWindow" Height="450" Width="500">
     <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <TabControl Grid.Row="0" x:Name="NewROTabControl" TabStripPlacement="Left" SelectionChanged="TabControl_SelectionChanged">
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0" Grid.ColumnSpan="2" x:Name="NewROTabControl" TabStripPlacement="Left" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="Vehicle Data" >
                 <ContentControl x:Name="NewRO_Vehicle_Content_View"/>
             </TabItem>
@@ -22,8 +28,11 @@
                 <ContentControl x:Name="NewRo_Repair_Content_View"/>
             </TabItem>
         </TabControl>
-        <Button Grid.Row="1" x:Name="FinishRO"
-                Click="FinishRO_Click">
+
+		<TextBlock Grid.Row="1" Grid.Column="0">New RO Number :</TextBlock>
+		<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=NewRONumber}" Style="{StaticResource NewRO_DataEntry}"/>
+
+		<Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="FinishRO">
             Complete RO
         </Button>
     </Grid>

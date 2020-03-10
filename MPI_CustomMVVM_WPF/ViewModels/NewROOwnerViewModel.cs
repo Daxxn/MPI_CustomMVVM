@@ -8,30 +8,35 @@ using System.Threading.Tasks;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
-    public class NewRO_OwnerViewModel : ViewModelBase, IViewModel
+    public class NewROOwnerViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
 		public Owner NewOwner { get; private set; }
 
-		private string _FirstNameInput;
-		private string _LastNameInput;
-		private string _PhoneNumberInput;
-		private string _StreetInput;
-		private string _CityInput;
-		private string _StateInput;
-		private int _ZIPInput;
-		private string _CountryInput;
+		private string _FirstNameInput = "";
+		private string _LastNameInput = "";
+		private string _PhoneNumberInput = "";
+		private string _StreetInput = "";
+		private string _CityInput = "";
+		private string _StateInput = "";
+		private int? _ZIPInput;
+		private string _CountryInput = "";
 		#endregion
 
 		#region - Constructors
-		public NewRO_OwnerViewModel( ) { }
+		public NewROOwnerViewModel( )
+		{
+			NewOwner = new Owner();
+			Init();
+		}
 		#endregion
 
 		#region - Methods
-		public Owner BuildNewOwner(  )
+		public Owner FinalizeRO(  )
 		{
 			return NewOwner;
 		}
+
 		public string CleanPhoneNumber( string input )
 		{
 			string output = "";
@@ -47,8 +52,19 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 					output += n;
 				}
 			}
-
 			return output;
+		}
+
+		private void Init(  )
+		{
+			FirstNameInput = "";
+			LastNameInput = "";
+			PhoneNumberInput = "";
+			StreetInput = "";
+			CityInput = "";
+			StateInput = "";
+			ZIPInput = null;
+			CountryInput = "";
 		}
 		#endregion
 
@@ -119,7 +135,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			}
 		}
 
-		public int ZIPInput
+		public int? ZIPInput
 		{
 			get { return _ZIPInput; }
 			set
