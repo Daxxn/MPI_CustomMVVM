@@ -37,6 +37,12 @@ namespace MPI_CustomMVVM_WPF.Views
         {
             var vmTest = vm as NewROViewModel;
             FinishRO.Click += vmTest.FinishROClick;
+            FinishRO.Click += TriggerClose;
+        }
+
+        private void TriggerClose( object sender, RoutedEventArgs e)
+        {
+            Close();
         }
 
         private void TabControl_SelectionChanged( object sender, SelectionChangedEventArgs e )

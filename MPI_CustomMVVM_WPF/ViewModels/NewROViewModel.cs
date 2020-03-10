@@ -26,8 +26,6 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			NewVehicleVM = new NewROVehicleViewModel();
 			NewOwnerVM = new NewROOwnerViewModel();
 			NewRepairVM = new NewRORepairViewModel();
-
-
 		}
 		#endregion
 

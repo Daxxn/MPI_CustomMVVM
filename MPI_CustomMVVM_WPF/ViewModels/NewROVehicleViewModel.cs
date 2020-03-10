@@ -22,7 +22,10 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Constructors
-		public NewROVehicleViewModel( ) { }
+		public NewROVehicleViewModel( )
+		{
+			NewVehicle = new Vehicle();
+		}
 		#endregion
 
 		#region - Methods
@@ -66,7 +69,14 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			{
 				if (Char.IsDigit(c) || Char.IsLetter(c))
 				{
-					output += c;
+					if (output.Length < 17)
+					{
+						output += c;
+					}
+					else
+					{
+						break;
+					}
 				}
 			}
 			return output;
