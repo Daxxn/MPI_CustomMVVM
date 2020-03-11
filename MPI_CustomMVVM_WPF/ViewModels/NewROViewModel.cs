@@ -1,4 +1,5 @@
-﻿using MPI_CustomMVVM_WPF.Interfaces;
+﻿using MPI_CustomMVVM_WPF.EventClasses;
+using MPI_CustomMVVM_WPF.Interfaces;
 using MPILibrary;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 	public class NewROViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
+		public event EventHandler<FinishNewROEventArgs> FinishROEvent;
 		#region Nested ViewModels
 		public NewROVehicleViewModel NewVehicleVM { get; private set; }
 		public NewROOwnerViewModel NewOwnerVM { get; private set; }
@@ -41,7 +43,10 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 
 				// Change out later!!
 				Inspection = new Inspection(),
+
 			};
+
+			FinishROEvent.Invoke(this, new FinishNewROEventArgs(newRO));
 		}
 		#endregion
 

@@ -47,6 +47,7 @@ namespace MPI_CustomMVVM_WPF
 			var vm = DataContext as ShellViewModel;
 			vm.NewROVM = new NewROViewModel();
 			var newRO = ViewModelFactory.BuildNewROWindow(vm.NewROVM);
+			vm.BuildEvents();
 			newRO.Show();
 		}
 

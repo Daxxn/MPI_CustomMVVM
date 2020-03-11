@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
@@ -26,7 +27,18 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region - Methods
 
 		#region Event Handlers
-
+		public void GetNewRepairOrder( RepairOrder ro )
+		{
+			if (ro != null)
+			{
+				RepairOrderDataList.Add(ro);
+				SelectedRepairOrder = RepairOrderDataList.FirstOrDefault(x => x == ro);
+			}
+			else
+			{
+				MessageBox.Show("Unable to find the new Repair Order.");
+			}
+		}
 		#endregion
 		#endregion
 

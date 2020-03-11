@@ -1,4 +1,5 @@
 ﻿using MPI_CustomMVVM_WPF.ButtonCommands;
+using MPI_CustomMVVM_WPF.EventClasses;
 using MPI_CustomMVVM_WPF.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,9 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		public SelectedRepairOrderViewModel SelectedRepairOrderVM { get; private set; }
 		#endregion
 
-		#region Commands
-		//private ICommand _createNewROCommand;
-		#endregion
+		#region Events
 
+		#endregion
 		#endregion
 
 		#region - Constructors
@@ -32,9 +32,20 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		{
 			RepairOrdersVM = new RepairOrdersViewModel();
 			SelectedRepairOrderVM = new SelectedRepairOrderViewModel();
-			//CreateNewROCommand = new	CreateNewROCommand(CreateNewRepairOrder);
+
+			
 		}
 		#endregion
+
+		private void NewROVM_FinishROEvent( object sender, FinishNewROEventArgs e )
+		{
+			RepairOrdersVM.GetNewRepairOrder(e.RO);
+		}
+
+		public void BuildEvents(  )
+		{
+			NewROVM.FinishROEvent += NewROVM_FinishROEvent;
+		}
 
 		#region - Methods
 		public void SaveClick( object sender, RoutedEventArgs e )
@@ -55,15 +66,6 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 				return _shellInstance;
 			}
 		}
-
-		//public ICommand CreateNewROCommand
-		//{
-		//	get { return _createNewROCommand; }
-		//	set
-		//	{
-		//		_createNewROCommand = value;
-		//	}
-		//}
 		#endregion
 	}
 }

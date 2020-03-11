@@ -29,8 +29,16 @@
             </TabItem>
         </TabControl>
 
-		<TextBlock Grid.Row="1" Grid.Column="0">New RO Number :</TextBlock>
-		<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=NewRONumber}" Style="{StaticResource NewRO_DataEntry}"/>
+		<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Column="0">New RO Number :</TextBlock>
+			<TextBox Grid.Column="1" Text="{Binding Path=NewRONumber}" Style="{StaticResource NewRO_DataEntry}"/>
+			<Button Grid.Column="2" x:Name="GenerateRONumber">Generate Number</Button>
+		</Grid>
 
 		<Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="FinishRO">
             Complete RO

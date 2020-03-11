@@ -6,10 +6,9 @@
       <Method Name="ShellViewModel" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAACACAAAAAAAAAAAAAAABAAAAAAQBAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAACACAAAAAAAAAAAAAAAJAAAAAAQBAAAgAAAAAA=</HashCode>
       <FileName>ViewModels\ShellViewModel.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="MPI_CustomMVVM_WPF.ViewModels.SelectedRepairOrderViewModel">
     <Position X="3" Y="4.25" Width="2.25" />
@@ -34,7 +33,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAIAAAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAAAAAAAAIAAAAAAEAAAAAAAgAAIAAAAAA=</HashCode>
       <FileName>ViewModels\RepairOrdersViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -48,7 +47,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAgAAAAAAAAAAiAAAAAAAIAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAAAAAgAAAAAAAACAiAAAAAAAIAABAAAA=</HashCode>
       <FileName>ViewModels\NewROViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -81,7 +80,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AACAAIACAAAAEAAAAAAIAAAAAQEAAEAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AACQAIACAAAAEACAAAAIAAAACQEgIEAAEAAAAQAAAAA=</HashCode>
       <FileName>ViewModels\NewRORepairViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

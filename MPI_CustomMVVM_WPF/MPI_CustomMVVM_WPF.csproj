@@ -96,6 +96,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ButtonCommands\CreateNewROCommand.cs" />
+    <Compile Include="EventClasses\FinishNewROEventArgs.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />
@@ -165,8 +166,6 @@
       <Name>MPILibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EventClasses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
