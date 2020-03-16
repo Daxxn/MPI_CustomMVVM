@@ -19,17 +19,18 @@
 			</MenuItem>
 			<MenuItem x:Name="CreateROButton" Header="Create RO"
 					Click="CreateRO_Click"/>
-			<MenuItem Header="CreateRO Command Test"
-					Command="{Binding Path=CreateNewROCommand}"/>
 		</Menu>
 
 		<TabControl Grid.Row="2" x:Name="MainTabControl"
 					SelectionChanged="MainTabControl_SelectionChanged">
-			<TabItem Header="RepairOrder" x:Name="RepairOrder_Tab">
+			<TabItem Header="Repair Orders" x:Name="RepairOrder_Tab">
 				<ContentControl x:Name="RepairOrder_Content_View"/>
 			</TabItem>
-			<TabItem Header="SelectedRepairOrder" x:Name="SelectedRepairOrder_Tab">
+			<TabItem Header="Selected RO" x:Name="SelectedRepairOrder_Tab">
 				<ContentControl x:Name="SelectedRepairOrder_Content_View"/>
+			</TabItem>
+			<TabItem Header="Inspection" x:Name="Inspection_Tab">
+				<ContentControl x:Name="Inspection_Content_View"/>
 			</TabItem>
 		</TabControl>
 	</Grid>

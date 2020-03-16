@@ -6,9 +6,10 @@
       <Method Name="ShellViewModel" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAACACAAAAAAAAAAAAAAAJAAAAAAQBAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAACACAgAAAAAAAAAAAAAJAAAAAAQBCAAgAAAAAA=</HashCode>
       <FileName>ViewModels\ShellViewModel.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="MPI_CustomMVVM_WPF.ViewModels.SelectedRepairOrderViewModel">
     <Position X="3" Y="4.25" Width="2.25" />
@@ -48,7 +49,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAgAAAAAAAACAiAAAAAAAIAABAAAA=</HashCode>
-      <FileName>ViewModels\NewROViewModel.cs</FileName>
+      <FileName>ViewModels\NewROViewModels\NewROViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -64,7 +65,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AIIAAAAACBgAAAAAAAgAAAgEAQAAAAAAIAICACAIAAA=</HashCode>
-      <FileName>ViewModels\NewROVehicleViewModel.cs</FileName>
+      <FileName>ViewModels\NewROViewModels\NewROVehicleViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -81,7 +82,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AACQAIACAAAAEACAAAAIAAAACQEgIEAAEAAAAQAAAAA=</HashCode>
-      <FileName>ViewModels\NewRORepairViewModel.cs</FileName>
+      <FileName>ViewModels\NewROViewModels\NewRORepairViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -98,14 +99,14 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>ABggAAAAAAgAEQAAAACAAACAAQQAAgCAQgAShAAAEAA=</HashCode>
-      <FileName>ViewModels\NewROOwnerViewModel.cs</FileName>
+      <FileName>ViewModels\NewROViewModels\NewROOwnerViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="MPI_CustomMVVM_WPF.ViewModelFactory">
     <Position X="5.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAEAACAAAAAAAAAAAAAAAEAAAAAAAgZBAQAAAAAABAA=</HashCode>
+      <HashCode>AAEAACBAAAAAAAAAAAAAAEAAAAAAAgZBAQAAAAAABAA=</HashCode>
       <FileName>ViewModelFactory.cs</FileName>
     </TypeIdentifier>
   </Class>

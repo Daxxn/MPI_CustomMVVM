@@ -1,0 +1,51 @@
+﻿<Window x:Class="MPI_CustomMVVM_WPF.Views.NewROWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MPI_CustomMVVM_WPF.Views"
+        mc:Ignorable="d"
+        Title="NewROWindow" Height="450" Width="500">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TabControl Grid.Row="0" Grid.ColumnSpan="2" x:Name="NewROTabControl" TabStripPlacement="Left" SelectionChanged="TabControl_SelectionChanged">
+			<TabItem Header="Vehicle Data" >
+				<ContentControl x:Name="NewRO_Vehicle_Content_View"/>
+			</TabItem>
+			<TabItem Header="Owner Data">
+				<ContentControl x:Name="NewRo_Owner_Content_View"/>
+			</TabItem>
+			<TabItem Header="Repairs">
+				<ContentControl x:Name="NewRo_Repair_Content_View"/>
+			</TabItem>
+		</TabControl>
+
+		<Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+				Padding="1" Margin="1" BorderThickness="1" BorderBrush="Blue">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Grid.Column="0" Margin="2,0,4,0">New RO Number :</TextBlock>
+				<TextBox Grid.Column="1" Text="{Binding Path=NewRONumber}" Style="{StaticResource NewRO_DataEntry}"/>
+				<Button Grid.Column="2" x:Name="GenerateRONumber" Margin="4,2,2,2">Generate Number</Button>
+			</Grid>
+		</Border>
+
+
+		<Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="FinishRO" Style="{StaticResource NewRepair_FinishButton}">
+			Complete RO
+		</Button>
+	</Grid>
+</Window>

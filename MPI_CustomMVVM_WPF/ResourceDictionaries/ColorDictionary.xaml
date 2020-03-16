@@ -3,4 +3,8 @@
     
     <SolidColorBrush x:Key="TextBox_DataEntry_Background" Color="#FFEBF0F3"/>
 	<SolidColorBrush x:Key="OPCode_IDNumber_Border" Color="#FF66809E"/>
+	<RadialGradientBrush x:Key="FinishRO_Background">
+		<GradientStop Color="#FFBBD7FF" Offset="2"/>
+		<GradientStop Color="White"/>
+	</RadialGradientBrush>
 </ResourceDictionary>

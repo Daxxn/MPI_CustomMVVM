@@ -20,6 +20,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		public NewROViewModel NewROVM { get; set; }
 		public RepairOrdersViewModel RepairOrdersVM { get; private set; }
 		public SelectedRepairOrderViewModel SelectedRepairOrderVM { get; private set; }
+		public InspectionViewModel InspectionVM { get; private set; }
 		#endregion
 
 		#region Events
@@ -47,6 +48,21 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			NewROVM.FinishROEvent += NewROVM_FinishROEvent;
 		}
 
+		public void SelectedTab( int index )
+		{
+			if (index == 0)
+			{
+
+			}
+			else if (index == 1)
+			{
+				SelectedRepairOrderVM.UpdateRO(RepairOrdersVM.SelectedRepairOrder);
+			}
+			else if (index == 2)
+			{
+
+			}
+		}
 		#region - Methods
 		public void SaveClick( object sender, RoutedEventArgs e )
 		{

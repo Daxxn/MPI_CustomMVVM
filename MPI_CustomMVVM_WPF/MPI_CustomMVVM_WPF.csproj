@@ -63,19 +63,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewROOwnerView.xaml">
+    <Page Include="Views\InspectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewRORepairView.xaml">
+    <Page Include="Views\NewROViews\NewROOwnerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewROVehicleView.xaml">
+    <Page Include="Views\NewROViews\NewRORepairView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewROWindow.xaml">
+    <Page Include="Views\NewROViews\NewROVehicleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewROViews\NewROWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,24 +106,28 @@
     <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="IoCContainer.cs" />
     <Compile Include="ViewModelFactory.cs" />
-    <Compile Include="ViewModels\NewRORepairViewModel.cs" />
-    <Compile Include="ViewModels\NewROVehicleViewModel.cs" />
-    <Compile Include="ViewModels\NewROViewModel.cs" />
-    <Compile Include="ViewModels\NewROOwnerViewModel.cs" />
+    <Compile Include="ViewModels\InspectionViewModel.cs" />
+    <Compile Include="ViewModels\NewROViewModels\NewRORepairViewModel.cs" />
+    <Compile Include="ViewModels\NewROViewModels\NewROVehicleViewModel.cs" />
+    <Compile Include="ViewModels\NewROViewModels\NewROViewModel.cs" />
+    <Compile Include="ViewModels\NewROViewModels\NewROOwnerViewModel.cs" />
     <Compile Include="ViewModels\RepairOrdersViewModel.cs" />
     <Compile Include="ViewModels\SelectedRepairOrderViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="Views\NewROOwnerView.xaml.cs">
+    <Compile Include="Views\InspectionView.xaml.cs">
+      <DependentUpon>InspectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewROViews\NewROOwnerView.xaml.cs">
       <DependentUpon>NewROOwnerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewRORepairView.xaml.cs">
+    <Compile Include="Views\NewROViews\NewRORepairView.xaml.cs">
       <DependentUpon>NewRORepairView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewROVehicleView.xaml.cs">
+    <Compile Include="Views\NewROViews\NewROVehicleView.xaml.cs">
       <DependentUpon>NewROVehicleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewROWindow.xaml.cs">
+    <Compile Include="Views\NewROViews\NewROWindow.xaml.cs">
       <DependentUpon>NewROWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RepairOrdersView.xaml.cs">

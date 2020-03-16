@@ -119,6 +119,16 @@ namespace MPI_CustomMVVM_WPF
 			return new SelectedRepairOrderView(vm);
 		}
 
+		public static IView BuildInspectionView(  )
+		{
+			return new InspectionView(new InspectionViewModel());
+		}
+
+		public static IView BuildInspectionView( IViewModel vm )
+		{
+			return new InspectionView(vm);
+		}
+
 		public static IView BuildNewROOwnerView( )
 		{
 			return new NewROOwnerView(new NewROOwnerViewModel());

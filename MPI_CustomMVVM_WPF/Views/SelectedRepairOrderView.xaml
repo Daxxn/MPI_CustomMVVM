@@ -6,12 +6,68 @@
              xmlns:local="clr-namespace:MPI_CustomMVVM_WPF.Views"
              mc:Ignorable="d" Background="Wheat"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="Repair Order"/>
-        <TextBlock Grid.Column="1" Text="{Binding Path=RepairOrder.RONumber}"/>
-    </Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Column="0" Grid.Row="0" FontSize="18">Selected Repair Order</TextBlock>
+
+		<Border Grid.Row="1" Grid.Column="0">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Grid.Row="1" Grid.Column="0" >RO Number :</TextBlock>
+				<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedRepairOrder.RONumber}"/>
+			</Grid>
+		</Border>
+
+		<Grid Grid.Row="2" Grid.Column="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="1" Grid.Column="0" >VIN :</TextBlock>
+			<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedRepairOrder.Vehicle.VIN}"/>
+
+			<TextBlock Grid.Row="2" Grid.Column="0">Make :</TextBlock>
+			<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path	=SelectedRepairOrder.Vehicle.Make}"/>
+			
+			<TextBlock Grid.Row="3" Grid.Column="0">Model :</TextBlock>
+			<TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path	=SelectedRepairOrder.Vehicle.Model}"/>
+
+			<TextBlock Grid.Row="4" Grid.Column="0">Year :</TextBlock>
+			<TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path	=SelectedRepairOrder.Vehicle.ModelYear}"/>
+		</Grid>
+
+		<Grid Grid.Row="3" Grid.Column="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+		</Grid>
+	</Grid>
 </UserControl>

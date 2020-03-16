@@ -22,4 +22,8 @@
 		<Setter Property="BorderBrush" Value="{StaticResource OPCode_IDNumber_Border}"/>
 		<Setter Property="BorderThickness" Value="2"/>
 	</Style>
+	<Style TargetType="Button" x:Key="NewRepair_FinishButton">
+		<Setter Property="Background" Value="{StaticResource FinishRO_Background}"/>
+		<Setter Property="Padding" Value="4"/>
+	</Style>
 </ResourceDictionary>

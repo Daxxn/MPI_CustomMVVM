@@ -68,6 +68,11 @@ namespace MPI_CustomMVVM_WPF
 				{
 					SelectedRepairOrder_Content_View.Content = ViewModelFactory.BuildSelectedRepairOrderView(ShellViewModel.ShellInstance.SelectedRepairOrderVM);
 				}
+				else if (MainTabControl.SelectedIndex == 2)
+				{
+					Inspection_Content_View.Content = ViewModelFactory.BuildInspectionView(ShellViewModel.ShellInstance.InspectionVM);
+				}
+				ShellViewModel.ShellInstance.SelectedTab(MainTabControl.SelectedIndex);
 			}
 			CurrentTabIndex = MainTabControl.SelectedIndex;
 		}
