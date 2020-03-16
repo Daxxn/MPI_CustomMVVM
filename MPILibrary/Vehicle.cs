@@ -49,7 +49,13 @@ namespace MPILibrary
 		#endregion
 
 		#region - Full Properties
-
+		public string TransDisplay
+		{
+			get
+			{
+				return $"{TransmissionSpeeds} : {TransmissionStyle}";
+			}
+		}
 		#endregion
 	}
 }

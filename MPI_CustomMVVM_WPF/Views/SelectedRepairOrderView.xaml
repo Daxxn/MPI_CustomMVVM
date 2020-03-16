@@ -1,11 +1,11 @@
 ﻿<UserControl x:Class="MPI_CustomMVVM_WPF.Views.SelectedRepairOrderView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MPI_CustomMVVM_WPF.Views"
-             mc:Ignorable="d" Background="Wheat"
-             d:DesignHeight="450" d:DesignWidth="800">
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:MPI_CustomMVVM_WPF.Views"
+			 mc:Ignorable="d" Background="Wheat"
+			 d:DesignHeight="450" d:DesignWidth="800">
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"/>
@@ -18,56 +18,168 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<TextBlock Grid.Column="0" Grid.Row="0" FontSize="18">Selected Repair Order</TextBlock>
+		<TextBlock Grid.Column="0" Grid.Row="0" FontSize="18" FontWeight="DemiBold" Padding="10,4,0,4">Selected Repair Order</TextBlock>
 
-		<Border Grid.Row="1" Grid.Column="0">
+		<Border Grid.Row="1" Grid.Column="0" Style="{StaticResource SelectRO_MainDivisions}">
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
-				<TextBlock Grid.Row="1" Grid.Column="0" >RO Number :</TextBlock>
-				<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedRepairOrder.RONumber}"/>
+				<Border Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock>RO Number</TextBlock>
+				</Border>
+				<Border Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Text="{Binding Path=SelectedRepairOrder.RONumber}"/>
+				</Border>
 			</Grid>
 		</Border>
 
-		<Grid Grid.Row="2" Grid.Column="0">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="*"/>
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-			</Grid.RowDefinitions>
+		<!--Vehicle Data Display-->
+		<Border Grid.Row="2" Grid.Column="0" Style="{StaticResource SelectRO_MainDivisions}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
 
-			<TextBlock Grid.Row="1" Grid.Column="0" >VIN :</TextBlock>
-			<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedRepairOrder.Vehicle.VIN}"/>
+				<Border Grid.Row="1" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">VIN</TextBlock>
+				</Border>
+				<Border Grid.Row="1" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path=SelectedRepairOrder.Vehicle.VIN}"/>
+				</Border>
 
-			<TextBlock Grid.Row="2" Grid.Column="0">Make :</TextBlock>
-			<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path	=SelectedRepairOrder.Vehicle.Make}"/>
-			
-			<TextBlock Grid.Row="3" Grid.Column="0">Model :</TextBlock>
-			<TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path	=SelectedRepairOrder.Vehicle.Model}"/>
+				<Border Grid.Row="2" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Year</TextBlock>
+				</Border>
+				<Border Grid.Row="2" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path	=SelectedRepairOrder.Vehicle.ModelYear}"/>
+				</Border>
 
-			<TextBlock Grid.Row="4" Grid.Column="0">Year :</TextBlock>
-			<TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path	=SelectedRepairOrder.Vehicle.ModelYear}"/>
-		</Grid>
+				<Border Grid.Row="3" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Make</TextBlock>
+				</Border>
+				<Border Grid.Row="3" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path	=SelectedRepairOrder.Vehicle.Make}"/>
+				</Border>
 
-		<Grid Grid.Row="3" Grid.Column="0">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-			</Grid.RowDefinitions>
+				<Border Grid.Row="4" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Model</TextBlock>
+				</Border>
+				<Border Grid.Row="4" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path	=SelectedRepairOrder.Vehicle.Model}"/>
+				</Border>
 
-		</Grid>
+				<Border Grid.Row="5" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Body Style</TextBlock>
+				</Border>
+				<Border Grid.Row="5" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path	=SelectedRepairOrder.Vehicle.BodyClass}"/>
+				</Border>
+
+				<Border Grid.Row="6" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Engine</TextBlock>
+				</Border>
+				<Border Grid.Row="6" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path	=SelectedRepairOrder.Vehicle.EngineModel}"/>
+				</Border>
+
+				<Border Grid.Row="7" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Transmission</TextBlock>
+				</Border>
+				<Border Grid.Row="7" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path	=SelectedRepairOrder.Vehicle.TransDisplay}"/>
+				</Border>
+			</Grid>
+		</Border>
+
+		<!--Owner Data Display-->
+		<Border Grid.Row="3" Grid.Column="0" Style="{StaticResource SelectRO_MainDivisions}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<Border Grid.Row="0" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Owner</TextBlock>
+				</Border>
+				<Border Grid.Row="0" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path=SelectedRepairOrder.VehicleOwner.FullName, Mode=OneWay}"/>
+				</Border>
+
+				<Border Grid.Row="1" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_FieldText}">Phone</TextBlock>
+				</Border>
+				<Border Grid.Row="1" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+					<TextBlock Style="{StaticResource SelectRO_DataText}"
+						Text="{Binding Path=SelectedRepairOrder.VehicleOwner.Phone.NumberDisplay}"/>
+				</Border>
+
+				<!--Vehicle Owner Display-->
+				<Expander Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+						  BorderBrush="Blue" BorderThickness="1">
+					<Expander.Header>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Margin="0,0,4,0">Owner :</TextBlock>
+							<TextBlock Text="{Binding Path=SelectedRepairOrder.VehicleOwner.FullName}"/>
+						</StackPanel>
+					</Expander.Header>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+
+						<Border Grid.Row="0" Grid.Column="0" Style="{StaticResource SelectRO_FieldDisplay}">
+							<TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource SelectRO_FieldText}">Phone</TextBlock>
+						</Border>
+						<Border Grid.Row="0" Grid.Column="1" Style="{StaticResource SelectRO_DataDisplay}">
+							<TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource SelectRO_DataText}"
+								Text="{Binding Path=SelectedRepairOrder.VehicleOwner.Phone.NumberDisplay}"/>
+						</Border>
+						
+						<Expander Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+							BorderBrush="Blue" BorderThickness="1">
+							<Expander.Header>
+								<TextBlock>Address</TextBlock>
+							</Expander.Header>
+							<TextBlock Background="AliceBlue" Padding="4" Text="{Binding Path=SelectedRepairOrder.VehicleOwner.Address.FullAddress}"/>
+						</Expander>
+					</Grid>
+				</Expander>
+			</Grid>
+		</Border>
 	</Grid>
 </UserControl>

@@ -31,5 +31,14 @@ namespace MPILibrary
             LocalNumber = local;
             PhoneNumberString = $"({areaCode}) {exchange} - {local}";
         }
+
+        public string NumberDisplay
+        {
+            get
+            {
+                string temp = CountryCode == 1 ? "" : $"{CountryCode} - ";
+                return $"{temp}( {AreaCode} ) - {Exchange} - {LocalNumber}";
+            }
+        }
     }
 }

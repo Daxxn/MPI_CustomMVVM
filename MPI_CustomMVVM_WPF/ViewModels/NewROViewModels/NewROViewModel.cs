@@ -45,14 +45,16 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 					Model = "330Ci",
 					ModelYear = 2003,
 					Doors = 2,
-					Color = "Red"
+					Color = "Red",
+					TransmissionSpeeds = 5,
+					TransmissionStyle = "Manual"
 				},
 				VehicleOwner = new Owner
 				{
 					FirstName = "Cody",
 					LastName = "Lantz",
 					Phone = new PhoneNumber(971, 772, 4975),
-					Address = new Address(29940, "sw Brown Rd", "#305", "Wilsonville", "Oregon", "USA")
+					Address = new Address(29940, "sw Brown Rd", "#305", "Wilsonville", "Oregon", 97070, "USA")
 				},
 				Repairs = new List<Repair>()
 				{

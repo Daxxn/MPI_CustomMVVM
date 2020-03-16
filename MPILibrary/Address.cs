@@ -47,7 +47,13 @@ namespace MPILibrary
 		#endregion
 
 		#region - Full Properties
-
+		public string FullAddress
+		{
+			get
+			{
+				return $"{StreetNumber} {StreetName} {AppartmentNumber}\n{City} {State} {Country} , {ZipCode}";
+			}
+		}
 		#endregion
 	}
 }
