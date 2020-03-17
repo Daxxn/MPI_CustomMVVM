@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary
+namespace MPILibrary.V1_Models
 {
-    public class Vehicle
+	public class Vehicle : IVehicle
 	{
 		#region - Fields & Properties
 		public int[] ErrorCode { get; set; }

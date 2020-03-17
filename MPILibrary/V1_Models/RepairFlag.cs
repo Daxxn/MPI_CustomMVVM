@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary
+namespace MPILibrary.V1_Models
 {
-    public struct RepairFlag
+    public struct RepairFlag : IRepairFlag
     {
         public static List<RepairFlag> AllFlags { get; set; }
         public string Name { get; set; }

@@ -14,36 +14,34 @@ namespace MPI_CustomMVVM_WPF.ViewModels
     public class NewRORepairViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		private ObservableCollection<Repair> _newRepairDataList = new ObservableCollection<Repair>();
-		private ObservableCollection<Repair> _repairOPCodes = new ObservableCollection<Repair>();
-		private Repair _selectedOpCode;
-		private Repair _selectedRepair;
+		private ObservableCollection<IRepair> _newRepairDataList = new ObservableCollection<IRepair>();
+		private ObservableCollection<IRepair> _repairOPCodes = new ObservableCollection<IRepair>();
+		private IRepair _selectedOpCode;
+		private IRepair _selectedRepair;
 		#endregion
 
 		#region - Constructors
 		//public NewRORepairViewModel( ) { }
 		public NewRORepairViewModel( )
 		{
-			RepairOPCodes = new ObservableCollection<Repair>(new List<Repair>()
+			RepairOPCodes = new ObservableCollection<IRepair>(new List<IRepair>()
 			{
-				new Repair()
-				{
-					OPCode = 10,
-					Name = "Test Repair 1",
-					Description = "This is a test of the OP code selection system."
-				},
-				new Repair()
-				{
-					OPCode = 20,
-					Name = "Test Repair 2",
-					Description = "Need to implement a json file with all the OP codes stored in it. Maybe with a setting file for the paths??"
-				}
+				MPIFactory.BuildRepair(
+					10,
+					"Test Repair 1",
+					"This is a test of the OP code selection system."
+				),
+				MPIFactory.BuildRepair(
+					20,
+					"Test Repair 2",
+					"Need to implement a json file with all the OP codes stored in it. Maybe with a setting file for the paths??"
+				)
 			});
 		}
 		#endregion
 
 		#region - Methods
-		public List<Repair> FinalizeRO(  )
+		public List<IRepair> FinalizeRO(  )
 		{
 			return NewRepairDataList.ToList();
 		}
@@ -53,7 +51,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			AddRepairToList(SelectedOPCode);
 		}
 
-		private void AddRepairToList( Repair repair )
+		private void AddRepairToList( IRepair repair )
 		{
 			if (repair != null && !NewRepairDataList.Contains(repair))
 			{
@@ -67,7 +65,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			SaveRepairToList(SelectedRepair);
 		}
 
-		private void SaveRepairToList( Repair repair )
+		private void SaveRepairToList( IRepair repair )
 		{
 			if (repair != null && !RepairOPCodes.Contains(repair))
 			{
@@ -79,7 +77,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region Event Handlers
 		public void NewRepair( object sender, RoutedEventArgs e )
 		{
-			AddRepairToList(new Repair());
+			AddRepairToList(MPIFactory.BuildRepair());
 		}
 
 		public void AddRepair( object sender, RoutedEventArgs e )
@@ -112,7 +110,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Full Properties
-		public ObservableCollection<Repair> NewRepairDataList
+		public ObservableCollection<IRepair> NewRepairDataList
 		{
 			get { return _newRepairDataList; }
 			set
@@ -122,7 +120,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			}
 		}
 
-		public ObservableCollection<Repair> RepairOPCodes
+		public ObservableCollection<IRepair> RepairOPCodes
 		{
 			get { return _repairOPCodes; }
 			set
@@ -132,7 +130,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			}
 		}
 
-		public Repair SelectedOPCode
+		public IRepair SelectedOPCode
 		{
 			get { return _selectedOpCode; }
 			set
@@ -141,7 +139,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 				OnPropertyChanged(nameof(SelectedOPCode));
 			}
 		}
-		public Repair SelectedRepair
+		public IRepair SelectedRepair
 		{
 			get { return _selectedRepair; }
 			set

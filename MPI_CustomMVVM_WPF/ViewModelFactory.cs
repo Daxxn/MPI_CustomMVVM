@@ -50,61 +50,9 @@ namespace MPI_CustomMVVM_WPF
 		{
 			return new RepairOrdersView(new RepairOrdersViewModel()
 			{
-				RepairOrderDataList = new System.Collections.ObjectModel.ObservableCollection<MPILibrary.RepairOrder>()
+				RepairOrderDataList = new System.Collections.ObjectModel.ObservableCollection<MPILibrary.IRepairOrder>()
 				{
-					new MPILibrary.RepairOrder
-					{
-						RONumber = 123456,
-						VehicleOwner = new MPILibrary.Owner
-						{
-							FirstName = "Cody",
-							LastName = "Lantz",
-							Address = new MPILibrary.Address(29940, "Brown RD.", "305", "Wilsonville", "Oregon", "US"),
-							Phone = new MPILibrary.PhoneNumber(971,772,4975)
-						},
-						Vehicle = new MPILibrary.Vehicle
-						{
-							VIN = "JHMGE8H52DC071704"
-						},
-						Inspection = new MPILibrary.Inspection
-						{
-							Name = "Default",
-							InspectionData = new List<MPILibrary.InspectionElement>()
-							{
-								new MPILibrary.InspectionElement
-								{
-									Title = "Inspect Headlights",
-									Category = MPILibrary.Enums.InspectionCategory.Lighting,
-									Measurement = null,
-									Result = MPILibrary.Enums.InspectionResult.Open,
-									Specs = ""
-								},
-								new MPILibrary.InspectionElement
-								{
-									Title = "Inspect Brakse",
-									Category = MPILibrary.Enums.InspectionCategory.Brakes,
-									Measurement = 0,
-									Result = MPILibrary.Enums.InspectionResult.Open,
-									Specs = "Minimum of 3mm"
-								}
-							}
-						},
-						Repairs = new List<MPILibrary.Repair>()
-						{
-							new MPILibrary.Repair
-							{
-								OPCode = 10,
-								Name = "Front brake Replacement",
-								Description = "Resurface Rotors, Replace Brake Pads and hardware."
-							},
-							new MPILibrary.Repair
-							{
-								OPCode = 11,
-								Name = "Oil & Filter Change",
-								Description = "Drain and refill engine oil, replace engine oil filter, Top off fluids."
-							}
-						}
-					}
+					MPILibrary.MPIFactory.BuildTest_A()
 				}
 			});
 		}
@@ -159,14 +107,13 @@ namespace MPI_CustomMVVM_WPF
 			return new NewRORepairView(vm);
 		}
 
-		/// <summary>
-		/// -DEPRECIATED-
-		/// Doesnt work. The view doesnt connect with the view model and doesnt display properly.
-		/// </summary>
-		/// <typeparam name="TView"></typeparam>
-		/// <typeparam name="TViewModel"></typeparam>
-		/// <returns></returns>
-		public static IView BuildView<TView, TViewModel>(  ) where TView : IView
+        #region Keep for future study.
+        /// <summary>
+        /// -DEPRECIATED-
+        /// Doesnt work. The view doesnt connect with the view model and doesnt display properly.
+        /// I think the problem is the "partial class" nature of XAML views. Dependency Injection would probably be the only way around this.
+        /// </summary>
+        public static IView BuildView<TView, TViewModel>(  ) where TView : IView
 		{
 			var ctor = typeof(TView).GetConstructor(new Type[] { typeof(TViewModel) });
 			var param = typeof(TViewModel).GetConstructor(Type.EmptyTypes).Invoke(null);
@@ -175,21 +122,19 @@ namespace MPI_CustomMVVM_WPF
 
 		/// <summary>
 		/// -DEPRECIATED-
-		/// Kinda works. I just dont trust it enough.
+		/// Kinda works. I just dont trust it enough. Same problem as the BuildView Method.
 		/// </summary>
-		/// <typeparam name="TWindowView"></typeparam>
-		/// <typeparam name="TViewModel"></typeparam>
-		/// <returns></returns>
 		public static IWindowView BuildWindow<TWindowView, TViewModel>( ) where TWindowView : IWindowView
 		{
 			var ctor = typeof(TWindowView).GetConstructor(new Type[] { typeof(TViewModel) });
 			var param = typeof(TViewModel).GetConstructor(Type.EmptyTypes).Invoke(null);
 			return (IWindowView)ctor.Invoke(new object[] { (TViewModel)param });
 		}
-		#endregion
+        #endregion
+        #endregion
 
-		#region - Full Properties
+        #region - Full Properties
 
-		#endregion
-	}
+        #endregion
+    }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary
+namespace MPILibrary.V1_Models
 {
-    public struct PhoneNumber
+    public struct PhoneNumber : IPhoneNumber
     {
         public string PhoneNumberString { get; set; }
         public int CountryCode { get; set; }

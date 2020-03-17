@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary
+namespace MPILibrary.V1_Models
 {
-    public struct Address
+	public struct Address : IAddress
 	{
 		#region - Fields & Properties
 		public int StreetNumber { get; set; }

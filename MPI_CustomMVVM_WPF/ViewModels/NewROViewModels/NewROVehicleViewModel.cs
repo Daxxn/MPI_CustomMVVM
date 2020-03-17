@@ -12,7 +12,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
     public class NewROVehicleViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		public Vehicle NewVehicle { get; private set; }
+		public IVehicle NewVehicle { get; private set; }
 
 		private string _VINInput = "";
 		private string _MakeInput = "";
@@ -24,7 +24,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region - Constructors
 		public NewROVehicleViewModel( )
 		{
-			NewVehicle = new Vehicle();
+			NewVehicle = MPIFactory.BuildVehicle();
 		}
 		#endregion
 
@@ -36,7 +36,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		}
 		#endregion
 
-		public Vehicle FinalizeRO(  )
+		public IVehicle FinalizeRO(  )
 		{
 			NewVehicle.VIN = VINInput;
 			NewVehicle.Make = MakeInput;
