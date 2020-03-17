@@ -7,5 +7,6 @@
         string FullName { get; }
         string LastName { get; set; }
         IPhoneNumber Phone { get; set; }
+        string EmailAddress { get; set; }
     }
 }

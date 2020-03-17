@@ -35,51 +35,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		public void FinishROClick( object sender, RoutedEventArgs e )
 		{
 			#region Testing ONLY
-			var newRO = new RepairOrder
-			{
-				RONumber = 123456,
-				Vehicle = new Vehicle()
-				{
-					VIN = "WBABN53443JU29742",
-					Make = "BMW",
-					Model = "330Ci",
-					ModelYear = 2003,
-					Doors = 2,
-					Color = "Red",
-					TransmissionSpeeds = 5,
-					TransmissionStyle = "Manual"
-				},
-				VehicleOwner = new Owner
-				{
-					FirstName = "Cody",
-					LastName = "Lantz",
-					Phone = new PhoneNumber(971, 772, 4975),
-					Address = new Address(29940, "sw Brown Rd", "#305", "Wilsonville", "Oregon", 97070, "USA"),
-					EmailAddress = "nynjalantz@gmail.com"
-				},
-				Repairs = new List<Repair>()
-				{
-					new Repair()
-					{
-						Name = "Replace Left Inner Tierod",
-						Description = "Remove and replace Left side inner tierod and boot.",
-						OPCode = 110
-					},
-					new Repair()
-					{
-						Name = "Replace Right Inner Tierod",
-						Description = "Remove and replace Left side inner tierod and boot.",
-						OPCode = 111
-					},
-					new Repair()
-					{
-						Name = "Perform Four Wheel Alignment",
-						Description = "Perform four wheel alignment and testdrive vehicle.",
-						OPCode = 10
-					}
-				},
-				Inspection = new Inspection()
-			};
+			var newRO = MPIFactory.BuildTest_B();
 			#endregion
 			#region Official
 			//var newRO = new RepairOrder

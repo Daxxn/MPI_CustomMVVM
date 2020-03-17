@@ -121,6 +121,55 @@ namespace MPILibrary
 				}
 			};
 		}
+
+		public static IRepairOrder BuildTest_B(  )
+		{
+			return new RepairOrder()
+			{
+				RONumber = 123456,
+				Vehicle = new Vehicle()
+				{
+					VIN = "WBABN53443JU29742",
+					Make = "BMW",
+					Model = "330Ci",
+					ModelYear = 2003,
+					Doors = 2,
+					Color = "Red",
+					TransmissionSpeeds = 5,
+					TransmissionStyle = "Manual"
+				},
+				VehicleOwner = new Owner
+				{
+					FirstName = "Cody",
+					LastName = "Lantz",
+					Phone = new PhoneNumber(971, 772, 4975),
+					Address = new Address(29940, "sw Brown Rd", "#305", "Wilsonville", "Oregon", 97070, "USA"),
+					EmailAddress = "nynjalantz@gmail.com"
+				},
+				Repairs = new List<IRepair>()
+				{
+					new Repair()
+					{
+						Name = "Replace Left Inner Tierod",
+						Description = "Remove and replace Left side inner tierod and boot.",
+						OPCode = 110
+					},
+					new Repair()
+					{
+						Name = "Replace Right Inner Tierod",
+						Description = "Remove and replace Left side inner tierod and boot.",
+						OPCode = 111
+					},
+					new Repair()
+					{
+						Name = "Perform Four Wheel Alignment",
+						Description = "Perform four wheel alignment and testdrive vehicle.",
+						OPCode = 10
+					}
+				},
+				Inspection = new Inspection()
+			};
+		}
 		#endregion
 		}
 }

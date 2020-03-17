@@ -13,6 +13,7 @@ namespace MPILibrary.V1_Models
 		public string LastName { get; set; }
 		public IPhoneNumber Phone { get; set; }
 		public IAddress Address { get; set; }
+		public string EmailAddress { get; set; }
 		#endregion
 
 		#region - Constructors

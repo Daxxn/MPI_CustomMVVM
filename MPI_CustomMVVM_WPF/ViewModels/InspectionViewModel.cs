@@ -11,7 +11,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
     public class InspectionViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		public RepairOrder _selectedRO;
+		public IRepairOrder _selectedRO;
 		#endregion
 
 		#region - Constructors
@@ -19,14 +19,14 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Methods
-		public void UpdateRO( RepairOrder ro )
+		public void UpdateRO( IRepairOrder ro )
 		{
 			SelectedRO = ro;
 		}
 		#endregion
 
 		#region - Full Properties
-		public RepairOrder SelectedRO
+		public IRepairOrder SelectedRO
 		{
 			get { return _selectedRO; }
 			set
