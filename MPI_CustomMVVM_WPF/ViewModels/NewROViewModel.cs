@@ -34,17 +34,15 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region - Methods
 		public void FinishROClick( object sender, RoutedEventArgs e )
 		{
-			var newRO = new RepairOrder
-			{
-				RONumber = NewRONumber,
-				Vehicle = NewVehicleVM.FinalizeRO(),
-				Repairs = NewRepairVM.FinalizeRO(),
-				VehicleOwner = NewOwnerVM.FinalizeRO(),
+			var newRO = MPIFactory.BuildRepairOrder();
+			newRO.RONumber = NewRONumber;
+			newRO.Vehicle = NewVehicleVM.FinalizeRO();
+			newRO.Repairs = NewRepairVM.FinalizeRO();
+			newRO.VehicleOwner = NewOwnerVM.FinalizeRO();
 
-				// Change out later!!
-				Inspection = new Inspection(),
+			// Change out later!!
+			newRO.Inspection = MPIFactory.BuildInspection();
 
-			};
 
 			FinishROEvent.Invoke(this, new FinishNewROEventArgs(newRO));
 		}

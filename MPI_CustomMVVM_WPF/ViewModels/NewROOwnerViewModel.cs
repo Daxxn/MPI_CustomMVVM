@@ -11,7 +11,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
     public class NewROOwnerViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		public Owner NewOwner { get; private set; }
+		public IOwner NewOwner { get; private set; }
 
 		private string _FirstNameInput = "";
 		private string _LastNameInput = "";
@@ -26,13 +26,13 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region - Constructors
 		public NewROOwnerViewModel( )
 		{
-			NewOwner = new Owner();
+			NewOwner = MPIFactory.BuildOwner();
 			Init();
 		}
 		#endregion
 
 		#region - Methods
-		public Owner FinalizeRO(  )
+		public IOwner FinalizeRO(  )
 		{
 			return NewOwner;
 		}

@@ -13,21 +13,21 @@ namespace MPI_CustomMVVM_WPF.ViewModels
     public class RepairOrdersViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		private ObservableCollection<RepairOrder> _repairOrderDataList;
-		private RepairOrder _selectedRepairOrder;
+		private ObservableCollection<IRepairOrder> _repairOrderDataList;
+		private IRepairOrder _selectedRepairOrder;
 		#endregion
 
 		#region - Constructors
 		public RepairOrdersViewModel( )
 		{
-			RepairOrderDataList = new ObservableCollection<RepairOrder>();
+			RepairOrderDataList = new ObservableCollection<IRepairOrder>();
 		}
 		#endregion
 
 		#region - Methods
 
 		#region Event Handlers
-		public void GetNewRepairOrder( RepairOrder ro )
+		public void GetNewRepairOrder( IRepairOrder ro )
 		{
 			if (ro != null)
 			{
@@ -43,7 +43,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Full Properties
-		public ObservableCollection<RepairOrder> RepairOrderDataList
+		public ObservableCollection<IRepairOrder> RepairOrderDataList
 		{
 			get { return _repairOrderDataList; }
 			set
@@ -52,7 +52,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 				OnPropertyChanged(nameof(RepairOrderDataList));
 			}
 		}
-		public RepairOrder SelectedRepairOrder
+		public IRepairOrder SelectedRepairOrder
 		{
 			get { return _selectedRepairOrder; }
 			set

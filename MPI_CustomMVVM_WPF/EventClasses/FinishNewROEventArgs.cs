@@ -9,9 +9,9 @@ namespace MPI_CustomMVVM_WPF.EventClasses
 {
     public class FinishNewROEventArgs : EventArgs
     {
-        public RepairOrder RO { get; private set; }
+        public IRepairOrder RO { get; private set; }
 
-        public FinishNewROEventArgs( RepairOrder ro)
+        public FinishNewROEventArgs( IRepairOrder ro)
         {
             RO = ro;
         }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary
+namespace MPILibrary.V1_Models
 {
-    public class InspectionElement
+	public class InspectionElement : IInspectionElement
 	{
 		#region - Fields & Properties
 		public string Title { get; set; }

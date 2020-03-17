@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary
+namespace MPILibrary.V1_Models
 {
-    public class Inspection
+	public class Repair : IRepair
 	{
 		#region - Fields & Properties
+		public static Repair[] _allRepairs;
+		public int OPCode { get; set; }
 		public string Name { get; set; }
-		public List<InspectionElement> InspectionData { get; set; }
+		public string Description { get; set; }
 		#endregion
 
 		#region - Constructors
-		public Inspection( ) { }
+		public Repair( ) { }
 		#endregion
 
 		#region - Methods
@@ -22,7 +24,14 @@ namespace MPILibrary
 		#endregion
 
 		#region - Full Properties
-
+		public static Repair[] AllRepairs
+		{
+			get { return _allRepairs; }
+			set
+			{
+				_allRepairs = value;
+			}
+		}
 		#endregion
 	}
 }
