@@ -3,9 +3,14 @@
     
     <SolidColorBrush x:Key="TextBox_DataEntry_Background" Color="#FFEBF0F3"/>
 	<SolidColorBrush x:Key="OPCode_IDNumber_Border" Color="#FF66809E"/>
-	<SolidColorBrush x:Key="SelectRO_MainBorderBrush" Color="#FF97A7E0"/>
-	<SolidColorBrush x:Key="SelectRO_DataBorderBrush" Color="#FF97A7E0"/>
-	<SolidColorBrush x:Key="SelectRO_DataBackground" Color="#CCEEF6FB"/>
+	<SolidColorBrush x:Key="SelectRO_Main_BorderBrush" Color="#FF97A7E0"/>
+	<SolidColorBrush x:Key="SelectRO_Data_BorderBrush" Color="#FF97A7E0"/>
+	<SolidColorBrush x:Key="SelectRO_Data_Background" Color="#CCEEF6FB"/>
+	<SolidColorBrush x:Key="SelectRO_Repair_BorderBrush" Color="#FF5C73FF"/>
+	<SolidColorBrush x:Key="SelectRO_Repair_ExpanderBackground" Color="#FFE2E2E2"/>
+	<SolidColorBrush x:Key="SelectRO_Repair_Desc_Background" Color="#7FADCCF0"/>
+	<SolidColorBrush x:Key="SelectRO_ItemsControl_Background" Color="#FFEEEEEE"/>
+	<SolidColorBrush x:Key="SelectRO_ItemsControl_BorderBrush" Color="#FF6183E0"/>
 	<RadialGradientBrush x:Key="FinishRO_Background">
 		<GradientStop Color="#FFBBD7FF" Offset="2"/>
 		<GradientStop Color="White"/>

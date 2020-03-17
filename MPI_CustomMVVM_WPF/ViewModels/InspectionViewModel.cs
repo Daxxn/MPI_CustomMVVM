@@ -1,4 +1,5 @@
 ﻿using MPI_CustomMVVM_WPF.Interfaces;
+using MPILibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
-    public class InspectionViewModel : IViewModel
+    public class InspectionViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-
+		public RepairOrder _selectedRO;
 		#endregion
 
 		#region - Constructors
@@ -18,11 +19,22 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Methods
-
+		public void UpdateRO( RepairOrder ro )
+		{
+			SelectedRO = ro;
+		}
 		#endregion
 
 		#region - Full Properties
-
+		public RepairOrder SelectedRO
+		{
+			get { return _selectedRO; }
+			set
+			{
+				_selectedRO = value;
+				OnPropertyChanged(nameof(SelectedRO));
+			}
+		}
 		#endregion
 	}
 }

@@ -54,7 +54,8 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 					FirstName = "Cody",
 					LastName = "Lantz",
 					Phone = new PhoneNumber(971, 772, 4975),
-					Address = new Address(29940, "sw Brown Rd", "#305", "Wilsonville", "Oregon", 97070, "USA")
+					Address = new Address(29940, "sw Brown Rd", "#305", "Wilsonville", "Oregon", 97070, "USA"),
+					EmailAddress = "nynjalantz@gmail.com"
 				},
 				Repairs = new List<Repair>()
 				{

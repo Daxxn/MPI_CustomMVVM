@@ -33,8 +33,6 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		{
 			RepairOrdersVM = new RepairOrdersViewModel();
 			SelectedRepairOrderVM = new SelectedRepairOrderViewModel();
-
-			
 		}
 		#endregion
 

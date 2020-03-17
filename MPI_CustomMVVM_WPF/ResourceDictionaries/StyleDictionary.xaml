@@ -1,51 +1,105 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+	<!--#region Text Blocks-->
     <Style TargetType="TextBlock" x:Key="NewRO_DataID">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Padding" Value="0,0,4,0"/>
         <Setter Property="Margin" Value="0,2,0,2"/>
     </Style>
+	
     <Style TargetType="TextBlock" x:Key="NewRO_AddressID" BasedOn="{StaticResource NewRO_DataID}">
     </Style>
+	
     <Style TargetType="TextBlock" x:Key="NewRepairSelectionComboBox" BasedOn="{StaticResource NewRO_DataID}">
         <Setter Property="Padding" Value="2,0,4,0"/>
     </Style>
+	
 	<Style TargetType="TextBlock" x:Key="SelectRO_DataText">
 		<Setter Property="Padding" Value="2,0,2,0"/>
 	</Style>
+	
 	<Style TargetType="TextBlock" x:Key="SelectRO_FieldText">
 		<Setter Property="Padding" Value="0,0,4,0"/>
 	</Style>
+
+	<Style TargetType="TextBlock" x:Key="SelectRO_Repairs_DataText">
+		<Setter Property="Padding" Value="4,2,4,2"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
+
+	<Style TargetType="TextBlock" x:Key="SelectRO_Repairs_DescText">
+		<Setter Property="Background" Value="{StaticResource SelectRO_Repair_Desc_Background}"/>
+		<Setter Property="Padding" Value="2"/>
+		<Setter Property="TextWrapping" Value="Wrap"/>
+	</Style>
+	<!--#endregion-->
+	
+	<!--#region Text Boxes-->
     <Style TargetType="TextBox" x:Key="NewRO_DataEntry">
         <Setter Property="Background" Value="{StaticResource TextBox_DataEntry_Background}"/>
         <Setter Property="Margin" Value="0,2,0,2"/>
     </Style>
+	
     <Style TargetType="TextBox" x:Key="NewRO_AddressEntry" BasedOn="{StaticResource NewRO_DataEntry}">
         <Setter Property="Margin" Value="0,2,4,2"/>
     </Style>
+	<!--#endregion-->
+	
+	<!--#region Borders-->
 	<Style TargetType="Border" x:Key="NewRepair_OPCode_ID_Border">
 		<Setter Property="BorderBrush" Value="{StaticResource OPCode_IDNumber_Border}"/>
 		<Setter Property="BorderThickness" Value="2"/>
 	</Style>
+	
 	<Style TargetType="Border" x:Key="SelectRO_FieldDisplay">
 		<Setter Property="Padding" Value="2"/>
 		<Setter Property="CornerRadius" Value="1"/>
-		<Setter Property="BorderBrush" Value="{StaticResource SelectRO_DataBorderBrush}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource SelectRO_Data_BorderBrush}"/>
 		<Setter Property="BorderThickness" Value="1"/>
 	</Style>
+	
 	<Style TargetType="Border" x:Key="SelectRO_DataDisplay" BasedOn="{StaticResource SelectRO_FieldDisplay}">
-		<Setter Property="Background" Value="{StaticResource SelectRO_DataBackground}"/>
+		<Setter Property="Background" Value="{StaticResource SelectRO_Data_Background}"/>
 	</Style>
+	
 	<Style TargetType="Border" x:Key="SelectRO_MainDivisions">
-		<Setter Property="BorderBrush" Value="{StaticResource SelectRO_MainBorderBrush}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource SelectRO_Main_BorderBrush}"/>
 		<Setter Property="BorderThickness" Value="1"/>
 		<Setter Property="CornerRadius" Value="2"/>
 		<Setter Property="Padding" Value="2"/>
 		<Setter Property="Margin" Value="1"/>
 	</Style>
+
+	<Style TargetType="Border" x:Key="SelectRO_Repairs_Data">
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="BorderBrush" Value="{StaticResource SelectRO_Repair_BorderBrush}"/>
+	</Style>
+	<!--#endregion-->
+	
+	<!--#region Buttons-->
 	<Style TargetType="Button" x:Key="NewRepair_FinishButton">
 		<Setter Property="Background" Value="{StaticResource FinishRO_Background}"/>
 		<Setter Property="Padding" Value="4"/>
 	</Style>
+	<!--#endregion-->
+
+	<!--#region Expanders-->
+	<Style TargetType="Expander" x:Key="SelectRO_Repairs_Expander">
+		<Setter Property="Header" Value="Desc."/>
+		<Setter Property="Padding" Value="10,0,0,0"/>
+		<Setter Property="Background" Value="{StaticResource SelectRO_Repair_ExpanderBackground}"/>
+	</Style>
+	<!--#endregion-->
+	
+	<!--#region ItemsControls-->
+	<Style TargetType="ItemsControl" x:Key="SelectRO_Repairs_ItemsControl">
+		<Setter Property="Background" Value="{StaticResource SelectRO_ItemsControl_Background}"/>
+		<Setter Property="Margin" Value="2"/>
+		<Setter Property="BorderBrush" Value="{StaticResource SelectRO_ItemsControl_BorderBrush}"/>
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="Padding" Value="1"/>
+	</Style>
+	<!--#region -->
 </ResourceDictionary>

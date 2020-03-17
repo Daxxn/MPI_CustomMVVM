@@ -14,6 +14,7 @@ namespace MPILibrary
 		public PhoneNumber Phone { get; set; }
 		public string _phoneNumberString;
 		public Address Address { get; set; }
+		public string EmailAddress { get; set; }
 		#endregion
 
 		#region - Constructors
