@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPI_CustomMVVM_WPF", "MPI_C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPILibrary", "MPILibrary\MPILibrary.csproj", "{96DA43CE-AB51-4F07-8007-5E1D9193B961}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateControlLibrary", "StateControlLibrary\StateControlLibrary.csproj", "{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{96DA43CE-AB51-4F07-8007-5E1D9193B961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96DA43CE-AB51-4F07-8007-5E1D9193B961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96DA43CE-AB51-4F07-8007-5E1D9193B961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

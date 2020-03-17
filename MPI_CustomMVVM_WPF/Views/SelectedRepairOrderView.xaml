@@ -187,42 +187,52 @@
 						<TextBlock Background="{StaticResource SelectRO_Data_Background}" Padding="4"
 								Text="{Binding Path=SelectedRepairOrder.VehicleOwner.Address.FullAddress}"/>
 					</Expander>
+					
 				</Grid>
 			</Expander>
 		</Border>
-		
-		<!--Repair Tree Display-->
-		<ItemsControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="5"
-				Style="{StaticResource SelectRO_Repairs_ItemsControl}"
-				ItemsSource="{Binding Path=SelectedRepairOrder.Repairs}">
-			<ItemsControl.ItemTemplate>
-				<DataTemplate>
-					<Grid>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto"/>
-							<ColumnDefinition Width="*"/>
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="Auto"/>
-						</Grid.RowDefinitions>
 
-						<Border Grid.Column="0" Style="{StaticResource SelectRO_Repairs_Data}">
-							<TextBlock Style="{StaticResource SelectRO_Repairs_DataText}"
-									Text="{Binding Path=OPCode}"/>
-						</Border>
-						<Border Grid.Column="1" Style="{StaticResource SelectRO_Repairs_Data}">
-							<TextBlock Style="{StaticResource SelectRO_Repairs_DataText}"
-									Text="{Binding Path=Name}"/>
-						</Border>
-						<Expander Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
-								Style="{StaticResource SelectRO_Repairs_Expander}">
-							<TextBlock Style="{StaticResource SelectRO_Repairs_DescText}"
-									Text="{Binding Path=Description}"/>
-						</Expander>
-					</Grid>
-				</DataTemplate>
-			</ItemsControl.ItemTemplate>
-		</ItemsControl>
+		<Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="1" FontSize="14">Repairs Requested</TextBlock>
+			<!--Repair Tree Display-->
+			<ItemsControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="5"
+					Style="{StaticResource SelectRO_Repairs_ItemsControl}"
+					ItemsSource="{Binding Path=SelectedRepairOrder.Repairs}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+
+							<Border Grid.Column="0" Style="{StaticResource SelectRO_Repairs_Data}">
+								<TextBlock Style="{StaticResource SelectRO_Repairs_DataText}"
+										Text="{Binding Path=OPCode}"/>
+							</Border>
+							<Border Grid.Column="1" Style="{StaticResource SelectRO_Repairs_Data}">
+								<TextBlock Style="{StaticResource SelectRO_Repairs_DataText}"
+										Text="{Binding Path=Name}"/>
+							</Border>
+							<Expander Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+									Style="{StaticResource SelectRO_Repairs_Expander}">
+								<TextBlock Style="{StaticResource SelectRO_Repairs_DescText}"
+										Text="{Binding Path=Description}"/>
+							</Expander>
+							
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Grid>
 	</Grid>
 </UserControl>
