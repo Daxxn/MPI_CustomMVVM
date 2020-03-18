@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Category.cs" />
     <Compile Include="MPIFactory.cs" />
     <Compile Include="V1_Models\Address.cs" />
     <Compile Include="Enums\InspectionCategory.cs" />
@@ -63,6 +64,11 @@
     <Compile Include="V1_Models\RepairFlag.cs" />
     <Compile Include="V1_Models\RepairOrder.cs" />
     <Compile Include="V1_Models\Vehicle.cs" />
+    <Compile Include="V2_Inspection\Inspection.cs" />
+    <Compile Include="V2_Inspection\InspectionCategory.cs" />
+    <Compile Include="V2_Inspection\InspectionElement.cs" />
+    <Compile Include="V2_Inspection\Measurement.cs" />
+    <Compile Include="V2_Inspection\Results.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
