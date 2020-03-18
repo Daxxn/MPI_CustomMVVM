@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MPILibrary.V1_Models.Inspection" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>V1_Models\Inspection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPILibrary.V1_Models.InspectionElement" Collapsed="true">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAEAAAAAAAAQAAAAAAAAAAAAQAAAACAA=</HashCode>
+      <FileName>V1_Models\InspectionElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPILibrary.V1_Models.Owner" Collapsed="true">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIAAAAAAAAAAAAAAAAACAAAAIgAAAAg=</HashCode>
+      <FileName>V1_Models\Owner.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPILibrary.V1_Models.Repair" Collapsed="true">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAQAEAAAAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>V1_Models\Repair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPILibrary.V1_Models.RepairOrder" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAQAAAAAAAAAAABAAAAAAAAACAAAAAAQA=</HashCode>
+      <FileName>V1_Models\RepairOrder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MPILibrary.V1_Models.Vehicle" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAABAAAAiAhAICAABAIABIkEQGAAAAgBgRIKAgk=</HashCode>
+      <FileName>V1_Models\Vehicle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="MPILibrary.V1_Models.Address" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQCIAAAIAAAAgAIAAAABAAAABAAAAAA=</HashCode>
+      <FileName>V1_Models\Address.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="MPILibrary.V1_Models.PhoneNumber" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAQAAAQAAA=</HashCode>
+      <FileName>V1_Models\PhoneNumber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="MPILibrary.V1_Models.RepairFlag" Collapsed="true">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>V1_Models\RepairFlag.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Interface Name="MPILibrary.IAddress" Collapsed="true">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACIAAAIAAAAgAIAAAABAAAABAAAAAA=</HashCode>
+      <FileName>Interfaces\IAddress.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IInspection" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Interfaces\IInspection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IInspectionElement" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAEAAAAAAAAQAAAAAAAAAAAAQAAAACAA=</HashCode>
+      <FileName>Interfaces\IInspectionElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IOwner" Collapsed="true">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIAAAAAAAAAAAAAAAAACAAAAIgAAAAg=</HashCode>
+      <FileName>Interfaces\IOwner.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IPhoneNumber" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPhoneNumber.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IRepair" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRepair.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IRepairFlag" Collapsed="true">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRepairFlag.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IRepairOrder" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAQAAAAAAAAAAABAAAAAAAAACAAAAAAQA=</HashCode>
+      <FileName>Interfaces\IRepairOrder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MPILibrary.IVehicle" Collapsed="true">
+    <Position X="11" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAABAAAAiAhAICAABAIABIkEQGAAAAgBgBIKAgk=</HashCode>
+      <FileName>Interfaces\IVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

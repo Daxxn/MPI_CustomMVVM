@@ -70,5 +70,8 @@
     <Compile Include="V2_Inspection\Measurement.cs" />
     <Compile Include="V2_Inspection\Results.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="MPIDiagram_1.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
