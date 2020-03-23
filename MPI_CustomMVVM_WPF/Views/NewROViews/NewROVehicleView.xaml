@@ -17,8 +17,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             VIN :
@@ -58,5 +59,298 @@
         <TextBox Grid.Row="5" Grid.Column="1"
 				 Style="{StaticResource NewRO_DataEntry}"
                  Text="{Binding Path=ColorInput, UpdateSourceTrigger=PropertyChanged}"/>
+
+		<Expander Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+				  Header="More Info" IsExpanded="False">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<!--General Info-->
+				<Expander Grid.Row="0" Header="General" Padding="20,0,0,0">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+
+						<!--#region Row 1-->
+						<TextBlock Grid.Row="0" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Body Class
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=BodyClassInput}"/>
+
+						<TextBlock Grid.Row="0" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Curb Weight (lbs)
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=CurbWeightInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 2-->
+						<TextBlock Grid.Row="1" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Factory Country
+						</TextBlock>
+						<TextBox Grid.Row="1" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=PlantCountryInput}"/>
+
+						<TextBlock Grid.Row="1" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Vehicle Type
+						</TextBlock>
+						<TextBox Grid.Row="1" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=VehicleTypeInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 3-->
+						<TextBlock Grid.Row="2" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Manufacturer ID
+						</TextBlock>
+						<TextBox Grid.Row="2" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=ManufacturerIDInput}" IsEnabled="False"/>
+						<!--#endregion-->
+					</Grid>
+				</Expander>
+
+				<!--Engine Info-->
+				<Expander Grid.Row="1" Header="Engine" Padding="20,0,0,0">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<!--#region Row 1-->
+						<TextBlock Grid.Row="0" Grid.Column="0"
+						   Style="{StaticResource NewRO_DataID}">
+								Engine Code
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="1"
+						   Style="{StaticResource NewRO_DataEntry}"
+						 Text="{Binding Path=EngineModelInput}"/>
+
+						<TextBlock Grid.Row="0" Grid.Column="2"
+						   Style="{StaticResource NewRO_DataID}">
+								Drive Type
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="3"
+						   Style="{StaticResource NewRO_DataEntry}"
+						 Text="{Binding Path=DriveTypeInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 2-->
+						<TextBlock Grid.Row="1" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Displacement (CI)
+						</TextBlock>
+						<TextBox Grid.Row="1" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=DisplacementCIInput}"/>
+
+						<TextBlock Grid.Row="1" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Displacement (L)
+						</TextBlock>
+						<TextBox Grid.Row="1" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=DisplacementLInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 3-->
+						<TextBlock Grid.Row="2" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Cylinder Layout
+						</TextBlock>
+						<TextBox Grid.Row="2" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=EngineConfigurationInput}"/>
+
+						<TextBlock Grid.Row="2" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Cylinder Count
+						</TextBlock>
+						<TextBox Grid.Row="2" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=EngineCylindersInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 4-->
+						<TextBlock Grid.Row="3" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Power (HP)
+						</TextBlock>
+						<TextBox Grid.Row="3" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=EngineHPInput}"/>
+
+						<TextBlock Grid.Row="3" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Power (KW)
+						</TextBlock>
+						<TextBox Grid.Row="3" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=EngineKWInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 5-->
+						<TextBlock Grid.Row="4" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Fuel Design
+						</TextBlock>
+						<TextBox Grid.Row="4" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=FuelInjectionTypeInput}"/>
+
+						<TextBlock Grid.Row="4" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Fuel Type
+						</TextBlock>
+						<TextBox Grid.Row="4" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=FuelTypeInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 6-->
+						<TextBlock Grid.Row="5" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Valve Design
+						</TextBlock>
+						<TextBox Grid.Row="5" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=ValveTrainDesignInput}"/>
+					</Grid>
+				</Expander>
+
+				<!--Body Info-->
+				<Expander Grid.Row="2" Header="Body" Padding="20,0,0,0">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+
+						<!--#region Row 1-->
+						<TextBlock Grid.Row="0" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Series
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=SeriesInput}"/>
+
+						<TextBlock Grid.Row="0" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Trim
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=TrimInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 2-->
+						<TextBlock Grid.Row="1" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Doors
+						</TextBlock>
+						<TextBox Grid.Row="1" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=DoorsInput}"/>
+
+						<TextBlock Grid.Row="1" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Bed Type
+						</TextBlock>
+						<TextBox Grid.Row="1" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=BedTypeInput}"/>
+						<!--#endregion-->
+
+						<!--#region Row 2-->
+						<TextBlock Grid.Row="2" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								TPMS
+						</TextBlock>
+						<TextBox Grid.Row="2" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=TPMSInput}"/>
+					</Grid>
+				</Expander>
+
+				<!--Transmission-->
+				<Expander Grid.Row="3" Header="Transmission" Padding="20,0,0,0">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+
+						<!--#region Row 1-->
+						<TextBlock Grid.Row="0" Grid.Column="0"
+							Style="{StaticResource NewRO_DataID}">
+								Type
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="1"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=TransmissionStyleInput}"/>
+
+						<TextBlock Grid.Row="0" Grid.Column="2"
+							Style="{StaticResource NewRO_DataID}">
+								Gears
+						</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="3"
+							Style="{StaticResource NewRO_DataEntry}"
+							Text="{Binding Path=TransmissionSpeedsInput}"/>
+						<!--#endregion-->
+					</Grid>
+				</Expander>
+			</Grid>
+		</Expander>
     </Grid>
 </UserControl>

@@ -169,9 +169,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApiLibrary\VINLibrary.csproj">
+      <Project>{6094496d-930f-48f8-9ff1-842e4dd7bb04}</Project>
+      <Name>VINLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JsonLibrary\JsonLibrary.csproj">
+      <Project>{be4cdb86-36cd-4acd-8af4-a48a5c6d1b5f}</Project>
+      <Name>JsonLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MPILibrary\MPILibrary.csproj">
       <Project>{96DA43CE-AB51-4F07-8007-5E1D9193B961}</Project>
       <Name>MPILibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StateControlLibrary\StateControlLibrary.csproj">
+      <Project>{18da49bb-e7a2-46da-a0dc-1cab77a52b0d}</Project>
+      <Name>StateControlLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

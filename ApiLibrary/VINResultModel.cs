@@ -4,65 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MPILibrary.V1_Models
+namespace VINLibrary
 {
-	public class Vehicle : IVehicle
+	public class VINResultModel
 	{
 		#region - Fields & Properties
-		public int[] ErrorCode { get; set; }
+		public string ErrorCode { get; set; }
 		public string VIN { get; set; }
 		public string BodyClass { get; set; }
 		public string BedType { get; set; }
-		public int CurbWeightLB { get; set; }
-		public double DisplacementCI { get; set; }
-		public double DisplacementL { get; set; }
-		public int Doors { get; set; }
+		public string CurbWeightLB { get; set; }
+		public string DisplacementCI { get; set; }
+		public string DisplacementL { get; set; }
+		public string Doors { get; set; }
 		public string DriveType { get; set; }
 		public string EngineConfiguration { get; set; }
-		public int EngineCylinders { get; set; }
-		public double EngineHP { get; set; }
-		public double EngineKW { get; set; }
+		public string EngineCylinders { get; set; }
+		public string EngineHP { get; set; }
+		public string EngineKW { get; set; }
 		public string EngineModel { get; set; }
 		public string Make { get; set; }
-		public int ManufacturerId { get; set; }
+		public string ManufacturerId { get; set; }
 		public string Model { get; set; }
-		public int ModelYear { get; set; }
+		public string ModelYear { get; set; }
 		public string PlantCountry { get; set; }
 		public string Series { get; set; }
 		public string Trim { get; set; }
 		public string TPMS { get; set; }
-		public int TransmissionSpeeds { get; set; }
+		public string TransmissionSpeeds { get; set; }
 		public string TransmissionStyle { get; set; }
 		public string ValveTrainDesign { get; set; }
 		public string VehicleType { get; set; }
 		public string FuelTypePrimary { get; set; }
 		public string FuelInjectionType { get; set; }
-		public string Color { get; set; }
 		#endregion
 
 		#region - Constructors
-		public Vehicle( ) { }
+		public VINResultModel( ) { }
 		#endregion
 
 		#region - Methods
-		public static Vehicle BuildVehicleFromVIN(  )
+		public override string ToString( )
 		{
-			var vehicle = new Vehicle();
+			StringBuilder sb = new StringBuilder("VIN Result: ");
+			var props = this.GetType().GetProperties();
 
+			foreach (var prop in props)
+			{
+				sb.AppendLine($"{prop.Name} : {prop.GetValue(this)}");
+			}
 
-
-			return vehicle;
+			return sb.ToString();
 		}
 		#endregion
 
 		#region - Full Properties
-		public string TransDisplay
-		{
-			get
-			{
-				return $"{TransmissionSpeeds} : {TransmissionStyle}";
-			}
-		}
+
 		#endregion
 	}
 }

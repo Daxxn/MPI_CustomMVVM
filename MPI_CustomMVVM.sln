@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPILibrary", "MPILibrary\MP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateControlLibrary", "StateControlLibrary\StateControlLibrary.csproj", "{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VINLibrary", "ApiLibrary\VINLibrary.csproj", "{6094496D-930F-48F8-9FF1-842E4DD7BB04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLibrary", "JsonLibrary\JsonLibrary.csproj", "{BE4CDB86-36CD-4ACD-8AF4-A48A5C6D1B5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18DA49BB-E7A2-46DA-A0DC-1CAB77A52B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6094496D-930F-48F8-9FF1-842E4DD7BB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6094496D-930F-48F8-9FF1-842E4DD7BB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6094496D-930F-48F8-9FF1-842E4DD7BB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6094496D-930F-48F8-9FF1-842E4DD7BB04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4CDB86-36CD-4ACD-8AF4-A48A5C6D1B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4CDB86-36CD-4ACD-8AF4-A48A5C6D1B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4CDB86-36CD-4ACD-8AF4-A48A5C6D1B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4CDB86-36CD-4ACD-8AF4-A48A5C6D1B5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
