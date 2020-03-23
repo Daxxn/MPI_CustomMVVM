@@ -19,14 +19,16 @@
             <RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
+		<!--#region Main Info-->
         <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             VIN :
         </TextBlock>
         <TextBox Grid.Row="0" Grid.Column="1"
                 Style="{StaticResource NewRO_DataEntry}"
-				 Text="{Binding Path=VINInput, UpdateSourceTrigger=PropertyChanged}"/>
+				 Text="{Binding Path=NewVehicle.VIN, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Button x:Name="SearchVIN" Grid.Row="1" Grid.ColumnSpan="2">
             Search for VIN
@@ -37,28 +39,29 @@
         </TextBlock>
         <TextBox Grid.Row="2" Grid.Column="1"
 				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=MakeInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=NewVehicle.Make, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Year :
         </TextBlock>
         <TextBox Grid.Row="3" Grid.Column="1"
 				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=YearInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=NewVehicle.ModelYear, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Model :
         </TextBlock>
         <TextBox Grid.Row="4" Grid.Column="1"
 				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=ModelInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=NewVehicle.Model, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Color :
         </TextBlock>
         <TextBox Grid.Row="5" Grid.Column="1"
 				 Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=ColorInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=NewVehicle.Color, UpdateSourceTrigger=PropertyChanged}"/>
+		<!--#endregion-->
 
 		<Expander Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
 				  Header="More Info" IsExpanded="False">
@@ -96,7 +99,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=BodyClassInput}"/>
+							Text="{Binding Path=NewVehicle.BodyClass, Mode=TwoWay}"/>
 
 						<TextBlock Grid.Row="0" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -104,7 +107,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=CurbWeightInput}"/>
+							Text="{Binding Path=NewVehicle.CurbWeightLB}"/>
 						<!--#endregion-->
 
 						<!--#region Row 2-->
@@ -114,7 +117,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="1" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=PlantCountryInput}"/>
+							Text="{Binding Path=NewVehicle.PlantCountry}"/>
 
 						<TextBlock Grid.Row="1" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -122,7 +125,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="1" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=VehicleTypeInput}"/>
+							Text="{Binding Path=NewVehicle.VehicleType}"/>
 						<!--#endregion-->
 
 						<!--#region Row 3-->
@@ -132,7 +135,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="2" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=ManufacturerIDInput}" IsEnabled="False"/>
+							Text="{Binding Path=NewVehicle.ManufacturerId}" IsEnabled="False"/>
 						<!--#endregion-->
 					</Grid>
 				</Expander>
@@ -162,7 +165,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="1"
 						   Style="{StaticResource NewRO_DataEntry}"
-						 Text="{Binding Path=EngineModelInput}"/>
+						 Text="{Binding Path=NewVehicle.EngineModel}"/>
 
 						<TextBlock Grid.Row="0" Grid.Column="2"
 						   Style="{StaticResource NewRO_DataID}">
@@ -170,7 +173,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="3"
 						   Style="{StaticResource NewRO_DataEntry}"
-						 Text="{Binding Path=DriveTypeInput}"/>
+						 Text="{Binding Path=NewVehicle.DriveType}"/>
 						<!--#endregion-->
 
 						<!--#region Row 2-->
@@ -180,7 +183,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="1" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=DisplacementCIInput}"/>
+							Text="{Binding Path=NewVehicle.DisplacementCI}"/>
 
 						<TextBlock Grid.Row="1" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -188,7 +191,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="1" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=DisplacementLInput}"/>
+							Text="{Binding Path=NewVehicle.DisplacementL}"/>
 						<!--#endregion-->
 
 						<!--#region Row 3-->
@@ -198,7 +201,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="2" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=EngineConfigurationInput}"/>
+							Text="{Binding Path=NewVehicle.EngineConfiguration}"/>
 
 						<TextBlock Grid.Row="2" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -206,7 +209,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="2" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=EngineCylindersInput}"/>
+							Text="{Binding Path=NewVehicle.EngineCylinders}"/>
 						<!--#endregion-->
 
 						<!--#region Row 4-->
@@ -216,7 +219,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="3" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=EngineHPInput}"/>
+							Text="{Binding Path=NewVehicle.EngineHP}"/>
 
 						<TextBlock Grid.Row="3" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -224,7 +227,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="3" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=EngineKWInput}"/>
+							Text="{Binding Path=NewVehicle.EngineKW}"/>
 						<!--#endregion-->
 
 						<!--#region Row 5-->
@@ -234,7 +237,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="4" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=FuelInjectionTypeInput}"/>
+							Text="{Binding Path=NewVehicle.FuelInjectionType}"/>
 
 						<TextBlock Grid.Row="4" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -242,7 +245,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="4" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=FuelTypeInput}"/>
+							Text="{Binding Path=NewVehicle.FuelType}"/>
 						<!--#endregion-->
 
 						<!--#region Row 6-->
@@ -252,7 +255,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="5" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=ValveTrainDesignInput}"/>
+							Text="{Binding Path=NewVehicle.ValveTrainDesign}"/>
 					</Grid>
 				</Expander>
 
@@ -278,7 +281,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=SeriesInput}"/>
+							Text="{Binding Path=NewVehicle.Series}"/>
 
 						<TextBlock Grid.Row="0" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -286,7 +289,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=TrimInput}"/>
+							Text="{Binding Path=NewVehicle.Trim}"/>
 						<!--#endregion-->
 
 						<!--#region Row 2-->
@@ -296,7 +299,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="1" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=DoorsInput}"/>
+							Text="{Binding Path=NewVehicle.Doors}"/>
 
 						<TextBlock Grid.Row="1" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -304,7 +307,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="1" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=BedTypeInput}"/>
+							Text="{Binding Path=NewVehicle.BedType}"/>
 						<!--#endregion-->
 
 						<!--#region Row 2-->
@@ -314,7 +317,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="2" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=TPMSInput}"/>
+							Text="{Binding Path=NewVehicle.TPMS}"/>
 					</Grid>
 				</Expander>
 
@@ -338,7 +341,7 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="1"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=TransmissionStyleInput}"/>
+							Text="{Binding Path=NewVehicle.TransmissionStyle}"/>
 
 						<TextBlock Grid.Row="0" Grid.Column="2"
 							Style="{StaticResource NewRO_DataID}">
@@ -346,11 +349,12 @@
 						</TextBlock>
 						<TextBox Grid.Row="0" Grid.Column="3"
 							Style="{StaticResource NewRO_DataEntry}"
-							Text="{Binding Path=TransmissionSpeedsInput}"/>
+							Text="{Binding Path=NewVehicle.TransmissionSpeeds}"/>
 						<!--#endregion-->
 					</Grid>
 				</Expander>
 			</Grid>
 		</Expander>
+		
     </Grid>
 </UserControl>
