@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Category.cs" />
+    <Compile Include="Exceptions\PhoneNumberLengthException.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="MPIFactory.cs" />
     <Compile Include="V1_Models\Address.cs" />

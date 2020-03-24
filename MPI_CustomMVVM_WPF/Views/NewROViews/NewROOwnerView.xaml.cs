@@ -32,7 +32,9 @@ namespace MPI_CustomMVVM_WPF.Views
 
         public void SetEventBindings( IViewModel vm )
         {
-            
+            var viewModel = vm as NewROOwnerViewModel;
+            //PhoneInputBox.IsKeyboardFocusedChanged += viewModel.ParsePhoneNumberEvent;
+            PhoneInputBox.LostFocus += viewModel.ParsePhoneNumberEvent;
         }
         #endregion
     }

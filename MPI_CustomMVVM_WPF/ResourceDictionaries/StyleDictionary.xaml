@@ -40,10 +40,10 @@
         <Setter Property="Background" Value="{StaticResource TextBox_DataEntry_Background}"/>
         <Setter Property="Margin" Value="0,2,0,2"/>
     </Style>
-	
-    <Style TargetType="TextBox" x:Key="NewRO_AddressEntry" BasedOn="{StaticResource NewRO_DataEntry}">
-        <Setter Property="Margin" Value="0,2,4,2"/>
-    </Style>
+
+	<Style TargetType="TextBox" x:Key="NewRO_AddressEntry" BasedOn="{StaticResource NewRO_DataEntry}">
+		<Setter Property="Margin" Value="0,2,4,2"/>
+	</Style>
 	<!--#endregion-->
 	
 	<!--#region Borders-->

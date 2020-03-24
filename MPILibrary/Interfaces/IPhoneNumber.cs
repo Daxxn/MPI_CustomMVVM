@@ -7,5 +7,8 @@
         int Exchange { get; set; }
         int LocalNumber { get; set; }
         string PhoneNumberString { get; set; }
+        string NumberDisplay { get; }
+
+        bool ParsePhoneNumber( );
     }
 }

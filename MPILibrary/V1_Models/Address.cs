@@ -43,7 +43,25 @@ namespace MPILibrary.V1_Models
 		#endregion
 
 		#region - Methods
+		public void ParseAddress( string input )
+		{
+			if (!String.IsNullOrWhiteSpace(input))
+			{
+				string[] streetSplit = input.Split(' ');
 
+				if (streetSplit.Length > 2)
+				{
+					bool success = Int32.TryParse(streetSplit[ 0 ], out int parseOut);
+					if (success)
+					{
+						StreetNumber = parseOut;
+					}
+
+					StreetName = streetSplit[ 1 ];
+					AppartmentNumber = streetSplit[ 2 ];
+				}
+			}
+		}
 		#endregion
 
 		#region - Full Properties

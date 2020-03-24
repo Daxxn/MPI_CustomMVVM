@@ -5,13 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace MPI_CustomMVVM_WPF.ViewModels
 {
     public class NewROOwnerViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		public IOwner NewOwner { get; private set; }
+		private IOwner _newOwner;
+
+		private bool _phoneNumberPass = true;
 
 		private string _FirstNameInput = "";
 		private string _LastNameInput = "";
@@ -66,9 +70,42 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			ZIPInput = null;
 			CountryInput = "";
 		}
+
+		public void ParsePhoneNumberEvent( object sender, RoutedEventArgs e )
+		{
+			//var textBox = sender as TextBox;
+			//bool pass = NewOwner.Phone.ParsePhoneNumber();
+			PhoneNumberPass = NewOwner.Phone.ParsePhoneNumber();
+
+			if (PhoneNumberPass)
+			{
+				MessageBox.Show($"Parsed Phone number. {NewOwner.Phone.NumberDisplay}");
+			}
+		}
 		#endregion
 
 		#region - Full Properties
+
+		public IOwner NewOwner
+		{
+			get { return _newOwner; }
+			set
+			{
+				_newOwner = value;
+				OnPropertyChanged(nameof(NewOwner));
+			}
+		}
+
+		public bool PhoneNumberPass
+		{
+			get { return _phoneNumberPass; }
+			set
+			{
+				_phoneNumberPass = value;
+				OnPropertyChanged(nameof(PhoneNumberPass));
+			}
+		}
+
 		public string FirstNameInput
 		{
 			get { return _FirstNameInput; }

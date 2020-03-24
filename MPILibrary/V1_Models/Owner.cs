@@ -17,7 +17,11 @@ namespace MPILibrary.V1_Models
 		#endregion
 
 		#region - Constructors
-		public Owner( ) { }
+		public Owner( )
+		{
+			Phone = MPIFactory.BuildPhoneNumber();
+			Address = MPIFactory.BuildAddress();
+		}
 		#endregion
 
 		#region - Methods

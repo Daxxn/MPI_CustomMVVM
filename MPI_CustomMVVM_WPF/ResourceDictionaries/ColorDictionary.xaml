@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <SolidColorBrush x:Key="TextBox_DataEntry_Background" Color="#FFEBF0F3"/>
+	<SolidColorBrush x:Key="TextBox_PhoneEntry_Background" Color="#7FFF2300"/>
 	<SolidColorBrush x:Key="OPCode_IDNumber_Border" Color="#FF66809E"/>
 	<SolidColorBrush x:Key="SelectRO_Main_BorderBrush" Color="#FF97A7E0"/>
 	<SolidColorBrush x:Key="SelectRO_Data_BorderBrush" Color="#FF97A7E0"/>

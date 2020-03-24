@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MPI_CustomMVVM_WPF.Views"
-             mc:Ignorable="d" Background="Wheat"
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,19 +28,30 @@
             First Name :
         </TextBlock>
         <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=FirstNameInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=NewOwner.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Last Name :
         </TextBlock>
         <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=LastNameInput, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Path=NewOwner.LastName, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource NewRO_DataID}">
             Phone Number :
         </TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource NewRO_DataEntry}"
-                 Text="{Binding Path=PhoneNumberInput, UpdateSourceTrigger=PropertyChanged}"/>
+		<TextBox x:Name="PhoneInputBox" Grid.Row="2" Grid.Column="1"
+                 Text="{Binding Path=NewOwner.Phone.PhoneNumberString, UpdateSourceTrigger=PropertyChanged}"
+				 >
+			<TextBox.Style>
+				<Style TargetType="TextBox" BasedOn="{StaticResource NewRO_DataEntry}">
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding Path=PhoneNumberPass}" Value="false">
+							<Setter Property="Background" Value="{StaticResource TextBox_PhoneEntry_Background}"/>
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</TextBox.Style>
+		</TextBox>
 
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2" FontSize="14" Padding="4">
             Address
