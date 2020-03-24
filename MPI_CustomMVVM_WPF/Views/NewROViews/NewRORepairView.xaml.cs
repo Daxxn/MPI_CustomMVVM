@@ -31,11 +31,12 @@ namespace MPI_CustomMVVM_WPF.Views
 
         public void SetEventBindings( IViewModel vm )
         {
-            var vmTrue = vm as NewRORepairViewModel;
-            AddRepair.Click += vmTrue.AddRepair;
-            DelRepair.Click += vmTrue.RemoveRepair;
-            DefaultOPCBox.SelectionChanged += vmTrue.BoxSelctionChanged;
-            SaveRepair.Click += vmTrue.SaveSelectedRepairClick;
+            var viewModel = vm as NewRORepairViewModel;
+            NewRepair.Click += viewModel.NewRepair;
+            AddRepair.Click += viewModel.AddRepair;
+            DelRepair.Click += viewModel.RemoveRepair;
+            DefaultOPCBox.SelectionChanged += viewModel.BoxSelctionChanged;
+            SaveRepair.Click += viewModel.SaveSelectedRepairClick;
         }
     }
 }
