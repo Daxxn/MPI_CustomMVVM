@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MPILibrary.Interfaces;
 
 namespace MPILibrary
 {
-    public class Vehicle
-	{
+    public class Vehicle : IVehicle
+    {
 		#region - Fields & Properties
 		public int[] ErrorCode { get; set; }
 		public string VIN { get; set; }

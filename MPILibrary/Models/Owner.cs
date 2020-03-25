@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MPILibrary.Interfaces;
 
 namespace MPILibrary
 {
-    public class Owner
-	{
+    public class Owner : IOwner
+    {
 		#region - Fields & Properties
 		public string FirstName { get; set; }
 		public string LastName { get; set; }

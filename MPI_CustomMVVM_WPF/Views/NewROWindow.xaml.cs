@@ -25,6 +25,7 @@ namespace MPI_CustomMVVM_WPF.Views
         #region Fields / Properties
         private int currentTabIndex = -1;
         #endregion
+
         public NewROWindow( IViewModel vm )
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace MPI_CustomMVVM_WPF.Views
             var vmTest = vm as NewROViewModel;
             FinishRO.Click += vmTest.FinishROClick;
             FinishRO.Click += TriggerClose;
+            GenerateRONumber.Click += vmTest.GenerateRONumber;
         }
 
         private void TriggerClose( object sender, RoutedEventArgs e)

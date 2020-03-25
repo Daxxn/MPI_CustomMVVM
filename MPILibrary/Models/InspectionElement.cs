@@ -1,4 +1,5 @@
 ﻿using MPILibrary.Enums;
+using MPILibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace MPILibrary
 {
-    public class InspectionElement
-	{
+    public class InspectionElement : IInspectionElement
+    {
 		#region - Fields & Properties
 		public string Title { get; set; }
 		public InspectionCategory Category { get; set; }

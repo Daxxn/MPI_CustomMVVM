@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MPILibrary.Interfaces;
 
 namespace MPILibrary
 {
-    public class RepairOrder
-	{
+    public class Inspection : IInspection
+    {
 		#region - Fields & Properties
-		public int RONumber { get; set; }
-		public Owner VehicleOwner { get; set; }
-		public Vehicle Vehicle { get; set; }
-		public List<Repair> Repairs { get; set; }
-		public Inspection Inspection { get; set; }
+		public string Name { get; set; }
+		public List<IInspectionElement> InspectionData { get; set; }
 		#endregion
 
 		#region - Constructors
-		public RepairOrder( ) { }
+		public Inspection( ) { }
 		#endregion
 
 		#region - Methods

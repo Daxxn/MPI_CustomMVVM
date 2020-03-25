@@ -18,13 +18,16 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		public NewROVehicleViewModel NewVehicleVM { get; private set; }
 		public NewROOwnerViewModel NewOwnerVM { get; private set; }
 		public NewRORepairViewModel NewRepairVM { get; private set; }
-		#endregion
+        #endregion
+        protected RepairOrder NewRepairOrder { get; set; }
+        private int _roCount = 0;
 		private int _newRONumber;
 		#endregion
 
 		#region - Constructors
 		public NewROViewModel( )
 		{
+            NewRepairOrder = new RepairOrder();
 			NewVehicleVM = new NewROVehicleViewModel();
 			NewOwnerVM = new NewROOwnerViewModel();
 			NewRepairVM = new NewRORepairViewModel();
@@ -34,20 +37,21 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#region - Methods
 		public void FinishROClick( object sender, RoutedEventArgs e )
 		{
-			var newRO = new RepairOrder
-			{
-				RONumber = NewRONumber,
-				Vehicle = NewVehicleVM.FinalizeRO(),
-				Repairs = NewRepairVM.FinalizeRO(),
-				VehicleOwner = NewOwnerVM.FinalizeRO(),
+            NewRepairOrder.RONumber = NewRONumber;
+            NewRepairOrder.Vehicle = NewVehicleVM.FinalizeRO();
+            NewRepairOrder.Repairs = NewRepairVM.FinalizeRO();
+            NewRepairOrder.VehicleOwner = NewOwnerVM.FinalizeRO();
 
-				// Change out later!!
-				Inspection = new Inspection(),
+            // Change out later!!
+            NewRepairOrder.Inspection = new Inspection();
 
-			};
-
-			FinishROEvent.Invoke(this, new FinishNewROEventArgs(newRO));
+			FinishROEvent.Invoke(this, new FinishNewROEventArgs(NewRepairOrder));
 		}
+
+        public void GenerateRONumber(object sender, RoutedEventArgs e)
+        {
+            NewRepairOrder.GenerateRONumber();
+        }
 		#endregion
 
 		#region - Full Properties

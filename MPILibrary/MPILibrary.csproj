@@ -41,18 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
+    <Compile Include="Interfaces\IRepairOrder.cs" />
+    <Compile Include="Structs\Address.cs" />
     <Compile Include="Enums\InspectionCategory.cs" />
     <Compile Include="Enums\InspectionResult.cs" />
-    <Compile Include="InspectionElement.cs" />
-    <Compile Include="Inspection.cs" />
-    <Compile Include="Owner.cs" />
-    <Compile Include="PhoneNumber.cs" />
+    <Compile Include="Interfaces\IInspection.cs" />
+    <Compile Include="Interfaces\IInspectionElement.cs" />
+    <Compile Include="Models\InspectionElement.cs" />
+    <Compile Include="Models\Inspection.cs" />
+    <Compile Include="Interfaces\IOwner.cs" />
+    <Compile Include="Interfaces\IVehicle.cs" />
+    <Compile Include="Interfaces\IRepair.cs" />
+    <Compile Include="Models\Owner.cs" />
+    <Compile Include="Structs\PhoneNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repair.cs" />
-    <Compile Include="RepairFlag.cs" />
-    <Compile Include="RepairOrder.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="Models\Repair.cs" />
+    <Compile Include="Structs\RepairFlag.cs" />
+    <Compile Include="Models\RepairOrder.cs" />
+    <Compile Include="RepairOrderFactory.cs" />
+    <Compile Include="Models\Vehicle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

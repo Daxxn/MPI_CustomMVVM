@@ -50,7 +50,7 @@ namespace MPI_CustomMVVM_WPF
 		{
 			return new RepairOrdersView(new RepairOrdersViewModel()
 			{
-				RepairOrderDataList = new System.Collections.ObjectModel.ObservableCollection<MPILibrary.RepairOrder>()
+				RepairOrderDataList = new System.Collections.ObjectModel.ObservableCollection<MPILibrary.Interfaces.IRepairOrder>()
 				{
 					new MPILibrary.RepairOrder
 					{
@@ -69,7 +69,7 @@ namespace MPI_CustomMVVM_WPF
 						Inspection = new MPILibrary.Inspection
 						{
 							Name = "Default",
-							InspectionData = new List<MPILibrary.InspectionElement>()
+							InspectionData = new List<MPILibrary.Interfaces.IInspectionElement>()
 							{
 								new MPILibrary.InspectionElement
 								{
@@ -89,7 +89,7 @@ namespace MPI_CustomMVVM_WPF
 								}
 							}
 						},
-						Repairs = new List<MPILibrary.Repair>()
+						Repairs = new List<MPILibrary.Interfaces.IRepair>()
 						{
 							new MPILibrary.Repair
 							{

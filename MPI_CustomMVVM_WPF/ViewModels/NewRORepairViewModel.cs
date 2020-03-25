@@ -1,5 +1,6 @@
 ﻿using MPI_CustomMVVM_WPF.Interfaces;
 using MPILibrary;
+using MPILibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,17 +15,17 @@ namespace MPI_CustomMVVM_WPF.ViewModels
     public class NewRORepairViewModel : ViewModelBase, IViewModel
 	{
 		#region - Fields & Properties
-		private ObservableCollection<Repair> _newRepairDataList = new ObservableCollection<Repair>();
-		private ObservableCollection<Repair> _repairOPCodes = new ObservableCollection<Repair>();
-		private Repair _selectedOpCode;
-		private Repair _selectedRepair;
+		private ObservableCollection<IRepair> _newRepairDataList = new ObservableCollection<IRepair>();
+		private ObservableCollection<IRepair> _repairOPCodes = new ObservableCollection<IRepair>();
+		private IRepair _selectedOpCode;
+		private IRepair _selectedRepair;
 		#endregion
 
 		#region - Constructors
 		//public NewRORepairViewModel( ) { }
 		public NewRORepairViewModel( )
 		{
-			RepairOPCodes = new ObservableCollection<Repair>(new List<Repair>()
+			RepairOPCodes = new ObservableCollection<IRepair>(new List<IRepair>()
 			{
 				new Repair()
 				{
@@ -43,7 +44,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Methods
-		public List<Repair> FinalizeRO(  )
+		public List<IRepair> FinalizeRO(  )
 		{
 			return NewRepairDataList.ToList();
 		}
@@ -53,7 +54,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			AddRepairToList(SelectedOPCode);
 		}
 
-		private void AddRepairToList( Repair repair )
+		private void AddRepairToList( IRepair repair )
 		{
 			if (repair != null && !NewRepairDataList.Contains(repair))
 			{
@@ -67,7 +68,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			SaveRepairToList(SelectedRepair);
 		}
 
-		private void SaveRepairToList( Repair repair )
+		private void SaveRepairToList( IRepair repair )
 		{
 			if (repair != null && !RepairOPCodes.Contains(repair))
 			{
@@ -112,7 +113,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 		#endregion
 
 		#region - Full Properties
-		public ObservableCollection<Repair> NewRepairDataList
+		public ObservableCollection<IRepair> NewRepairDataList
 		{
 			get { return _newRepairDataList; }
 			set
@@ -122,7 +123,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			}
 		}
 
-		public ObservableCollection<Repair> RepairOPCodes
+		public ObservableCollection<IRepair> RepairOPCodes
 		{
 			get { return _repairOPCodes; }
 			set
@@ -132,7 +133,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 			}
 		}
 
-		public Repair SelectedOPCode
+		public IRepair SelectedOPCode
 		{
 			get { return _selectedOpCode; }
 			set
@@ -141,7 +142,7 @@ namespace MPI_CustomMVVM_WPF.ViewModels
 				OnPropertyChanged(nameof(SelectedOPCode));
 			}
 		}
-		public Repair SelectedRepair
+		public IRepair SelectedRepair
 		{
 			get { return _selectedRepair; }
 			set
