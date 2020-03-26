@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MPI_CustomMVVM_WPF.Views"
         mc:Ignorable="d"
-        Title="NewROWindow" Height="450" Width="500">
+        Title="NewROWindow" Height="600" Width="500">
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"/>
@@ -19,13 +19,17 @@
 
 		<TabControl Grid.Row="0" Grid.ColumnSpan="2" x:Name="NewROTabControl" TabStripPlacement="Left" SelectionChanged="TabControl_SelectionChanged">
 			<TabItem Header="Vehicle Data" >
-				<ContentControl x:Name="NewRO_Vehicle_Content_View"/>
-			</TabItem>
+                <ScrollViewer>
+                    <ContentControl x:Name="NewRO_Vehicle_Content_View"/>
+                </ScrollViewer>
+            </TabItem>
 			<TabItem Header="Owner Data">
 				<ContentControl x:Name="NewRo_Owner_Content_View"/>
 			</TabItem>
 			<TabItem Header="Repairs">
-				<ContentControl x:Name="NewRo_Repair_Content_View"/>
+                <ScrollViewer>
+                    <ContentControl x:Name="NewRo_Repair_Content_View"/>
+                </ScrollViewer>
 			</TabItem>
 		</TabControl>
 
